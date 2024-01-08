@@ -9,22 +9,6 @@ function expandup_searchpopup_woocommerce_page(){
 		<div class="adm-page-content">
 			<?php echo expandup_searchpopup_help_links(); ?>
 			<?php settings_errors(); ?>
-			<?php
-			$searchpopup_add_to_cart_activate = false;
-			$searchpopup_add_to_cart_modelo = false;
-			$searchpopup_add_to_cart_text = false;
-			$searchpopup_add_to_cart_action = false;
-			$searchpopup_view_cart_action = false;
-			$searchpopup_view_cart_text = false;
-			$searchpopup_add_cart_success_text = false;
-			$searchpopup_add_to_cart_text_color = false;
-			$searchpopup_add_to_cart_background = false;
-			$searchpopup_add_to_cart_border = false;
-			$searchpopup_add_to_cart_text_color_hover = false;
-			$searchpopup_add_to_cart_background_hover = false;
-			$searchpopup_add_to_cart_border_hover = false;
-			$searchpopup_add_to_cart_colors_style = false;				
-			?>
 			<h1 class="adm-page-title"><?php _e('Expand UP - Multiple Search Ajax Popup', 'searchpopup_textdomain'); ?><span class="plugin-version">Version: <?php echo EXPANDUP_SEARCHPOPUP_VERSION; ?></span></h1>
 			<h3 class="adm-page-subtitle"><?php _e('Woocommerce Settings', 'searchpopup_textdomain'); ?></h3>
 			<form id="opt-page" method="post" action="options.php" >
@@ -37,9 +21,9 @@ function expandup_searchpopup_woocommerce_page(){
 						</p>	
 					</td>
 					<td><span style="color: #ff0000;">(Pro Version)</span>
-						<select name="searchpopup_add_to_cart_activate" id="searchpopup_add_to_cart_activate">
-							<option value="0" <?php selected( $searchpopup_add_to_cart_activate, 0 ); ?>><?php _e('No', 'searchpopup_textdomain'); ?></option>
-							<option value="1" <?php selected( $searchpopup_add_to_cart_activate, 1 ); ?>><?php _e('Yes', 'searchpopup_textdomain'); ?></option>							
+						<select id="searchpopup_add_to_cart_activate">
+							<option value="0"><?php _e('No', 'searchpopup_textdomain'); ?></option>
+							<option value="1"><?php _e('Yes', 'searchpopup_textdomain'); ?></option>							
 						</select>
 					</td>
 				</tr>	
@@ -51,9 +35,8 @@ function expandup_searchpopup_woocommerce_page(){
 						</p>
 					</td>
 					<td><span style="color: #ff0000;">(Pro Version)</span>
-						<select name="searchpopup_add_to_cart_modelo" id="searchpopup_add_to_cart_modelo">
-							<option value="0" <?php selected( $searchpopup_add_to_cart_modelo, 0 ); ?>><?php _e('Standard button', 'searchpopup_textdomain'); ?></option>
-							<?php /*<option value="1" <?php selected( $searchpopup_add_to_cart_modelo, 1 ); ?>><?php _e('Button displayed on hover', 'searchpopup_textdomain'); ?></option>*/ ?>
+						<select id="searchpopup_add_to_cart_modelo">
+							<option value="0"><?php _e('Standard button', 'searchpopup_textdomain'); ?></option>							
 						</select>
 						<p><?php _e('We will soon have other options', 'searchpopup_textdomain'); ?></p>
 					</td>
@@ -66,12 +49,12 @@ function expandup_searchpopup_woocommerce_page(){
 						</p>
 					</td>
 					<td><span style="color: #ff0000;">(Pro Version)</span>
-						<select name="searchpopup_add_to_cart_action" id="searchpopup_add_to_cart_action">
-							<option value="0" <?php selected( $searchpopup_add_to_cart_action, 0 ); ?>><?php _e('Add to cart via ajax and keep the popup open', 'searchpopup_textdomain'); ?></option>
-							<option value="1" <?php selected( $searchpopup_add_to_cart_action, 1 ); ?>><?php _e('Add to cart via ajax and close the popup', 'searchpopup_textdomain'); ?></option>
-							<option value="2" <?php selected( $searchpopup_add_to_cart_action, 2 ); ?>><?php _e('Add to cart via ajax and close the popup and reload page', 'searchpopup_textdomain'); ?></option>														
-							<option value="3" <?php selected( $searchpopup_add_to_cart_action, 3 ); ?>><?php _e('Redirect to cart page', 'searchpopup_textdomain'); ?></option>							
-							<option value="4" <?php selected( $searchpopup_add_to_cart_action, 4 ); ?>><?php _e('Redirect to checkout page', 'searchpopup_textdomain'); ?></option>							
+						<select id="searchpopup_add_to_cart_action">
+							<option value="0"><?php _e('Add to cart via ajax and keep the popup open', 'searchpopup_textdomain'); ?></option>
+							<option value="1"><?php _e('Add to cart via ajax and close the popup', 'searchpopup_textdomain'); ?></option>
+							<option value="2"><?php _e('Add to cart via ajax and close the popup and reload page', 'searchpopup_textdomain'); ?></option>														
+							<option value="3"><?php _e('Redirect to cart page', 'searchpopup_textdomain'); ?></option>							
+							<option value="4"><?php _e('Redirect to checkout page', 'searchpopup_textdomain'); ?></option>							
 						</select>
 					</td>
 				</tr>
@@ -83,7 +66,7 @@ function expandup_searchpopup_woocommerce_page(){
 						</p>
 					</td>
 					<td><span style="color: #ff0000;">(Pro Version)</span>
-						<input id="searchpopup_add_to_cart_text" name="searchpopup_add_to_cart_text" type="text" class="input-text-100" value="<?php echo $searchpopup_add_to_cart_text; ?>" >
+						<input id="searchpopup_add_to_cart_text" type="text" class="input-text-100" value="" readonly>
 					</td>
 				</tr>
 				<tr>
@@ -94,9 +77,9 @@ function expandup_searchpopup_woocommerce_page(){
 						</p>	
 					</td>
 					<td><span style="color: #ff0000;">(Pro Version)</span>
-						<select name="searchpopup_view_cart_action" id="searchpopup_view_cart_action">
-							<option value="0" <?php selected( $searchpopup_view_cart_action, 0 ); ?>><?php _e('Go to cart', 'searchpopup_textdomain'); ?></option>
-							<option value="1" <?php selected( $searchpopup_view_cart_action, 1 ); ?>><?php _e('Go to checkout', 'searchpopup_textdomain'); ?></option>							
+						<select id="searchpopup_view_cart_action">
+							<option value="0"><?php _e('Go to cart', 'searchpopup_textdomain'); ?></option>
+							<option value="1"><?php _e('Go to checkout', 'searchpopup_textdomain'); ?></option>							
 						</select>
 					</td>
 				</tr>
@@ -108,7 +91,7 @@ function expandup_searchpopup_woocommerce_page(){
 						</p>	
 					</td>
 					<td><span style="color: #ff0000;">(Pro Version)</span>
-						<input id="searchpopup_view_cart_text" name="searchpopup_view_cart_text" type="text" class="input-text-100" value="<?php echo $searchpopup_view_cart_text; ?>" >
+						<input id="searchpopup_view_cart_text" type="text" class="input-text-100" value="" readonly>
 					</td>
 				</tr>
 				<tr>
@@ -119,7 +102,7 @@ function expandup_searchpopup_woocommerce_page(){
 						</p>	
 					</td>
 					<td><span style="color: #ff0000;">(Pro Version)</span>
-						<input id="searchpopup_add_cart_success_text" name="searchpopup_add_cart_success_text" type="text" class="input-text-100" value="<?php echo $searchpopup_add_cart_success_text; ?>" >
+						<input id="searchpopup_add_cart_success_text" type="text" class="input-text-100" value="" readonly>
 					</td>
 				</tr>
 				<tr>
@@ -130,14 +113,14 @@ function expandup_searchpopup_woocommerce_page(){
 					<td>	
 							<div class="control-colors">
 								<p><?php _e('Activate custom colors?', 'searchpopup_textdomain'); ?><span style="color: #ff0000;">(Pro Version)</span></p>
-								<input type="hidden" value="off" name="searchpopup_add_to_cart_colors_style">
+								<input type="hidden" value="off" >
 								<ul class="control-wrap">	        
 									<li class="dimension-wrap">
 										<p id="label-text-status"><?php _e('Disabled', 'searchpopup_textdomain'); ?></p>
 									</li>
 									<li class="dimension-wrap">
 										<label class="switch">
-										<input type="checkbox" name="searchpopup_add_to_cart_colors_style" value="on"  <?php if ($searchpopup_add_to_cart_colors_style === 'on'){echo 'checked="checked"';}?>>
+										<input type="checkbox" value="on">
 										<span class="slider round"></span>
 										</label>	                
 									</li>						 
@@ -149,29 +132,29 @@ function expandup_searchpopup_woocommerce_page(){
 							<p><strong>Normal</strong></p>
 							<p>
                                 <label for="searchpopup_add_to_cart_text_color"><?php _e('Button text color:', 'searchpopup_textdomain'); ?></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_text_color" name="searchpopup_add_to_cart_text_color" value="<?php echo $searchpopup_add_to_cart_text_color; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_text_color" value="">
                             </p>
 							<p>
                                 <label for="searchpopup_add_to_cart_background"><?php _e('Button background color:', 'searchpopup_textdomain'); ?></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_background" name="searchpopup_add_to_cart_background" value="<?php echo $searchpopup_add_to_cart_background; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_background" value="">
                             </p>
 							<p>
                                 <label for="searchpopup_add_to_cart_border"><?php _e('Button background color:', 'searchpopup_textdomain'); ?></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_border" name="searchpopup_add_to_cart_border" value="<?php echo $searchpopup_add_to_cart_border; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_border" value="">
                             </p>
 															
 							<p><strong>Hover</strong></p>
 							<p>
                                 <label for="searchpopup_add_to_cart_text_color_hover"><?php _e('Button text color:', 'searchpopup_textdomain'); ?></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_text_color_hover" name="searchpopup_add_to_cart_text_color_hover" value="<?php echo $searchpopup_add_to_cart_text_color_hover; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_text_color_hover" value="">
                             </p>
 							<p>
                                 <label for="searchpopup_add_to_cart_background_hover"><?php _e('Button background color:', 'searchpopup_textdomain'); ?></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_background_hover" name="searchpopup_add_to_cart_background_hover" value="<?php echo $searchpopup_add_to_cart_background_hover; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_background_hover" value="">
                             </p>
 							<p>
                                 <label for="searchpopup_add_to_cart_border_hover"><?php _e('Button background color:', 'searchpopup_textdomain'); ?></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_border_hover" name="searchpopup_add_to_cart_border_hover" value="<?php echo $searchpopup_add_to_cart_border_hover; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_add_to_cart_border_hover" value="">
                             </p>
 															
 					</td>
