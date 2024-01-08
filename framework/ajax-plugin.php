@@ -54,9 +54,10 @@ add_action('wp_ajax_searchpopup_add_product_to_cart', 'searchpopup_add_product_t
 add_action('wp_ajax_nopriv_searchpopup_add_product_to_cart', 'searchpopup_add_product_to_cart');
 
 
-function searchpopup_add_product_to_cart() {
+function searchpopup_add_product_to_cart() {   
+    
     // Verify nonce for security
-    if (isset($_POST['nonce']) && wp_verify_nonce($_POST['nonce'], 'searchpopup_add_to_cart_nonce')) {
+    if (isset($_POST['nonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'])), 'searchpopup_add_to_cart_nonce')) {
        
         $searchpopup_add_to_cart_action = intval(get_option('searchpopup_add_to_cart_action', false));
         $searchpopup_add_cart_success_text = get_option('searchpopup_add_cart_success_text', 'Product added to cart successfully');
