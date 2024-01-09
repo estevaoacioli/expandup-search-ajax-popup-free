@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function searchpopup_loop_cpt_latest($cpt, $categories, $qty) {	
+function expandup_searchpopup_loop_cpt_latest($cpt, $categories, $qty) {	
     $qty = intval($qty);
     $posts_per_page = 30;	
     $args = array(

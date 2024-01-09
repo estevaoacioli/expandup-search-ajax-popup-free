@@ -2,12 +2,12 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function searchpopup_cpt_msap_metas() {
-    add_meta_box('item-msap-fields', esc_html__('Slider Options', 'searchpopup_textdomain'), 'searchpopup_cpt_msap_metas_display', 'msap', 'normal', 'default');
+function expandup_searchpopup_cpt_msap_metas() {
+    add_meta_box('item-msap-fields', esc_html__('Slider Options', 'searchpopup_textdomain'), 'expandup_searchpopup_cpt_msap_metas_display', 'msap', 'normal', 'default');
 }
-add_action('admin_init', 'searchpopup_cpt_msap_metas');
+add_action('admin_init', 'expandup_searchpopup_cpt_msap_metas');
 
-function searchpopup_cpt_msap_metas_display(){
+function expandup_searchpopup_cpt_msap_metas_display(){
     global $post;
     $post_id = $post->ID;
     wp_nonce_field('searchpopup_cpt_msap_nonce', 'searchpopup_cpt_msap_nonce');	
@@ -239,7 +239,7 @@ function searchpopup_cpt_msap_metas_display(){
  <?php
 }
 
-function searchpopup_cpt_msap_meta_save($post_id) {
+function expandup_searchpopup_cpt_msap_meta_save($post_id) {
     global $post;
 
     // Checks save status
@@ -308,4 +308,4 @@ function searchpopup_cpt_msap_meta_save($post_id) {
     update_post_meta($post_id, 'searchpopup_section_layout_slider_hide_items', $searchpopup_section_layout_slider_hide_items);
 }
 
-add_action('save_post', 'searchpopup_cpt_msap_meta_save');
+add_action('save_post', 'expandup_searchpopup_cpt_msap_meta_save');

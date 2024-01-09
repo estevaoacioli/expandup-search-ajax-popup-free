@@ -8,7 +8,7 @@ function expandup_searchpopup_content() {
     $html = '';  
     if (isset($_POST['s'])) {
         $s = sanitize_text_field($_POST['s']);        
-        $icons = searchpopup_svgs();
+        $icons = expandup_searchpopup_svgs();
         $icon_calendar =  $icons['calendar'];
         $icon_search =  $icons['search'];
         $site_url = site_url(); 
@@ -18,17 +18,17 @@ function expandup_searchpopup_content() {
             $expandUpSearchPopup = new ExpandUpSearchPopup();  
             
             // Popup Header
-            $html .= searchpopup_html_popup_section_top($s, $site_url, $icon_search);  
+            $html .= expandup_searchpopup_html_popup_section_top($s, $site_url, $icon_search);  
             
-            $slider_options = searchpopup_cpt_msap_loop();
+            $slider_options = expandup_searchpopup_cpt_msap_loop();
 
             foreach($slider_options as $key => $value) {     
-                $html .= $expandUpSearchPopup->searchpopup_cpt_website_html($value, $s);
+                $html .= $expandUpSearchPopup->expandup_searchpopup_cpt_website_html($value, $s);
             }            
 
             // Popup Footer            
             if( $searchpopup_popup_footer_activate === 1 ){
-                $html .= searchpopup_html_popup_popup_footer();
+                $html .= expandup_searchpopup_html_popup_footer();
             }       
             
             $status= 'success';
@@ -54,7 +54,7 @@ add_action('wp_ajax_searchpopup_add_product_to_cart', 'searchpopup_add_product_t
 add_action('wp_ajax_nopriv_searchpopup_add_product_to_cart', 'searchpopup_add_product_to_cart');
 
 
-function searchpopup_add_product_to_cart() {   
+function expandup_searchpopup_add_product_to_cart() {   
     
     // Verify nonce for security
     if (isset($_POST['nonce']) && wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'])), 'searchpopup_add_to_cart_nonce')) {

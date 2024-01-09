@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function searchpopup_html_popup_popup_footer(){   
+function expandup_searchpopup_html_popup_footer(){   
     $searchpopup_popup_footer_menu01 =  get_option('searchpopup_popup_footer_menu01', false);
     $searchpopup_popup_footer_menu02 =  get_option('searchpopup_popup_footer_menu02', false);
     $searchpopup_popup_footer_menu03 =  get_option('searchpopup_popup_footer_menu03', false);

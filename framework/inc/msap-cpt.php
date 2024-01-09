@@ -34,15 +34,15 @@ function expandup_searchpopup_register_msap_cpt() {
     register_post_type('msap', $args);
 }
 
-function add_custom_columns_to_msap_list($columns) {
+function expandup_searchpopup_custom_columns_to_msap_list($columns) {
     $columns['searchpopup_section_activate'] = esc_html(_x('Activated', 'searchpopup_textdomain'));
     $columns['searchpopup_section_position'] = esc_html(_x('Position', 'searchpopup_textdomain'));
     $columns['searchpopup_section_cpt'] = 'CPT';
     return $columns;
 }
-add_filter('manage_msap_posts_columns', 'add_custom_columns_to_msap_list');
+add_filter('manage_msap_posts_columns', 'expandup_searchpopup_custom_columns_to_msap_list');
 
-function populate_custom_columns_for_msap_list($column, $post_id) {
+function expandup_searchpopup_populate_custom_columns_for_msap_list($column, $post_id) {
     switch ($column) {
         case 'searchpopup_section_activate':
             $searchpopup_section_activate = intval(get_post_meta($post_id, 'searchpopup_section_activate', true));
@@ -64,5 +64,5 @@ function populate_custom_columns_for_msap_list($column, $post_id) {
             break;
     }
 }
-add_action('manage_msap_posts_custom_column', 'populate_custom_columns_for_msap_list', 10, 2);
+add_action('manage_msap_posts_custom_column', 'expandup_searchpopup_populate_custom_columns_for_msap_list', 10, 2);
 

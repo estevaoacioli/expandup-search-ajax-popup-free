@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function searchpopup_cpt_msap_loop() {   
+function expandup_searchpopup_cpt_msap_loop() {   
     $args = array(
         'post_type' => 'msap',
         'posts_per_page' => -1,

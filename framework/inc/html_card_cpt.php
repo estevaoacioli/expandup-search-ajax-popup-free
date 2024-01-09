@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function searchpopup_html_card_cpt($args, $post, $icon_calendar){     
+function expandup_searchpopup_html_card_cpt($args, $post, $icon_calendar){     
     ob_start();
     ?>
     <div class="swiper-slide">
