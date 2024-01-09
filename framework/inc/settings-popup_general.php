@@ -154,7 +154,7 @@ function expandup_searchpopup_popup_general_page(){
 				<?php do_settings_sections('expandup_searchpopup_opt_general'); ?>				
 				<div class="options-footer-settings">
 				<?php 
-					$label = __('Save Settings', 'searchpopup_textdomain');
+					$label = esc_html__('Save Settings', 'searchpopup_textdomain');
 					$class = 'button-primary big-size';
 					submit_button($label, $class); 
 				?>

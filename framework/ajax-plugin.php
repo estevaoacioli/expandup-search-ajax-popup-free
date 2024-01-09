@@ -42,7 +42,7 @@ function expandup_searchpopup_content() {
     $retornar['html'] = $html;
     
     header('Content-type: application/json');
-    echo json_encode($retornar);
+    echo wp_json_encode($retornar);
     exit();
 } 
 
@@ -113,7 +113,7 @@ function searchpopup_add_product_to_cart() {
         );
     }
 
-    echo json_encode($response);
+    echo wp_json_encode($response);
 
     // Always exit to prevent further output
     exit();

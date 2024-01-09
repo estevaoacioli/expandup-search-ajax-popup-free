@@ -165,7 +165,7 @@ function expandup_searchpopup_woocommerce_page(){
 				<?php do_settings_sections('expandup_searchpopup_opt_popup_woo'); ?>				
 				<div class="options-footer-settings">
 				<?php 
-					$label = __('Save Settings', 'searchpopup_textdomain');
+					$label = esc_html__('Save Settings', 'searchpopup_textdomain');
 					$class = 'button-primary big-size';
 					submit_button($label, $class); 
 				?>

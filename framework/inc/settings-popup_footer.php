@@ -52,7 +52,7 @@ function expandup_searchpopup_popup_footer_page(){
 							$menus = wp_get_nav_menus();
 							if (!empty($menus)) {
 								echo '<select name="searchpopup_popup_footer_menu01">';
-								echo '<option value="">'. __('Choose a menu', 'searchpopup_textdomain') .'</option>';
+								echo '<option value="">'. esc_html__('Choose a menu', 'searchpopup_textdomain') .'</option>';
 								foreach ($menus as $menu) {
 									$val = esc_attr($menu->term_id);
 									$name = esc_html($menu->name);
@@ -80,7 +80,7 @@ function expandup_searchpopup_popup_footer_page(){
 							$menus = wp_get_nav_menus();
 							if (!empty($menus)) {
 								echo '<select name="searchpopup_popup_footer_menu02">';
-								echo '<option value="">'. __('Choose a menu', 'searchpopup_textdomain') .'</option>';
+								echo '<option value="">'. esc_html__('Choose a menu', 'searchpopup_textdomain') .'</option>';
 								foreach ($menus as $menu) {
 									$val = esc_attr($menu->term_id);
 									$name = esc_html($menu->name);
@@ -108,7 +108,7 @@ function expandup_searchpopup_popup_footer_page(){
 							$menus = wp_get_nav_menus();
 							if (!empty($menus)) {
 								echo '<select name="searchpopup_popup_footer_menu03">';
-								echo '<option value="">'. __('Choose a menu', 'searchpopup_textdomain') .'</option>';
+								echo '<option value="">'. esc_html__('Choose a menu', 'searchpopup_textdomain') .'</option>';
 								foreach ($menus as $menu) {
 									$val = esc_attr($menu->term_id);
 									$name = esc_html($menu->name);
@@ -171,7 +171,7 @@ function expandup_searchpopup_popup_footer_page(){
 				<?php do_settings_sections('expandup_searchpopup_opt_popup_footer'); ?>				
 				<div class="options-footer-settings">
 				<?php 
-					$label = __('Save Settings', 'searchpopup_textdomain');
+					$label = esc_html__('Save Settings', 'searchpopup_textdomain');
 					$class = 'button-primary big-size';
 					submit_button($label, $class); 
 				?>
