@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function searchpopup_html_card_cpt($args, $post, $icon_calendar){     
+function expandup_searchpopup_html_card_cpt($args, $post, $icon_calendar){     
     ob_start();
     ?>
     <div class="swiper-slide">
@@ -18,8 +18,7 @@ function searchpopup_html_card_cpt($args, $post, $icon_calendar){
 					if (!empty($post['post_category'])) {
 						$category = implode(', ', $post['post_category']); // Pega a primeira categoria
                         ?>
-						<div class="post-category"><?php echo esc_html($category); ?></div>
-					
+						<div class="post-category"><?php echo esc_html($category); ?></div>					
             <?php 
                         } 
                     }
@@ -45,10 +44,10 @@ function searchpopup_html_card_cpt($args, $post, $icon_calendar){
                         ?>
 						<div class="product-price">
 						<?php if(!empty($post['price_offer'])) { ?>
-							<span class="regular-old"><?php echo$post['price_regular']; ?></span>
-							<span class="offer"><?php echo$post['price_offer']; ?></span>
+							<span class="regular-old"><?php echo esc_html($post['price_regular']); ?></span>
+							<span class="offer"><?php echo esc_html($post['price_offer']); ?></span>
 						<?php } else { ?>
-							<span class="regular"><?php echo $post['price_regular']; ?></span>
+							<span class="regular"><?php echo esc_html($post['price_regular']); ?></span>
 						<?php }	?>
 						</div>
             <?php 

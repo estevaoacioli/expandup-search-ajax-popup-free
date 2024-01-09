@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function searchpopup_html_popup_section_top($s, $site_url, $icon_search){
+function expandup_searchpopup_html_popup_section_top($s, $site_url, $icon_search){
     $html = '';   
     $html .= '<div id="row-header-popup" class="row row-top">';
     $html .= '<div class="searchpopup-popup-content">';

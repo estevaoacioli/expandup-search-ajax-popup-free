@@ -11,27 +11,27 @@ function expandup_searchpopup_option_activate($input) {
 	}
 	return $sanitized_value;	
 }
-function sanitize_searchpopup_input_text($input) {		
+function expandup_searchpopup_sanitize_input_text($input) {		
 	$sanitized_value = sanitize_text_field($input);	
 	return $sanitized_value;
 }
-function sanitize_searchpopup_color($input) {		
+function expandup_searchpopup_sanitize_color($input) {		
 	if (preg_match('/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{8})$/', $input)) {			
 			return $input;
 	} else {			
 			return NULL;
 	}
 }
-function sanitize_searchpopup_transparency($input) {		
+function expandup_searchpopup_sanitize_transparency($input) {		
 	$sanitized_value = floatval($input);		
 	$sanitized_value = max(0, min(1, $sanitized_value));	
 	return $sanitized_value;
 }
-function sanitize_searchpopup_integer($input) {		
+function expandup_searchpopup_sanitize_integer($input) {		
 	$sanitized_value = intval($input);	
 	return $sanitized_value;
 }
-function sanitize_searchpopup_layout_items($input) {		
+function expandup_searchpopup_sanitize_layout_items($input) {		
 	if (is_array($input)) {			
 		$allowed_keys = array('thumbnail', 'title', 'resume', 'price', 'category', 'date');	
 		$sanitized_value = array_filter($input, function ($item) use ($allowed_keys) {
@@ -42,7 +42,7 @@ function sanitize_searchpopup_layout_items($input) {
 	}	
 	return $sanitized_value;
 }
-function sanitize_searchpopup_layout_slider_hide_items($input) {	
+function expandup_searchpopup_sanitize_layout_slider_hide_items($input) {	
 	if (is_array($input)) {	
 		$allowed_keys = array('navigation', 'pagination');
 		$sanitized_value = array_filter($input, function ($item) use ($allowed_keys) {
@@ -53,7 +53,7 @@ function sanitize_searchpopup_layout_slider_hide_items($input) {
 	}
 	return $sanitized_value;
 }	
-function sanitize_searchpopup_cpt($input) {	
+function expandup_searchpopup_sanitize_cpt($input) {	
 	if (is_array($input) && count($input) === 1) {
 		$cpt = reset($input); 
 		$sanitized_value = $cpt;			

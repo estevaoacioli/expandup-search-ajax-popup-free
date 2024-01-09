@@ -4,7 +4,7 @@ Plugin Name: Expand UP - Multiple Search Ajax Popup FREE
 Plugin URI: https://expandup.tech/
 Description: Plugin for conducting AJAX searches and displaying results in a popup; the results are displayed in a segmented manner
 Author: Expand UP
-Version: 1.0.1
+Version: 1.0.0
 Author URI: https://expandup.tech/
 Text Domain: searchpopup_textdomain
 Domain Path: /languages
