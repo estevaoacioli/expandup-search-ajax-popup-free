@@ -54,7 +54,7 @@ function expandup_searchpopup_popup_footer_page(){
 									$val = esc_attr($menu->term_id);
 									$name = esc_html($menu->name);
 									$check = selected( $searchpopup_popup_footer_menu01, $val );
-									echo '<option value="' . $val . '" '.$check.' >' . $name . '</option>';
+									echo '<option value="' . esc_attr($val) . '" ' . $check . '>' . esc_html($name) . '</option>';
 								}
 								echo '</select>';								
 							} else {
@@ -71,7 +71,7 @@ function expandup_searchpopup_popup_footer_page(){
 					<td>
 						<p>
 							<label for="searchpopup_popup_footer_menu02_title" class="label"><?php esc_html_e('Enter a title for this section. If left blank, nothing will be shown', 'searchpopup_textdomain'); ?></label>
-							<br><input id="searchpopup_popup_footer_menu02_title" name="searchpopup_popup_footer_menu02_title" type="text" class="input-text" value="<?php echo $searchpopup_popup_footer_menu02_title; ?>" >
+							<br><input id="searchpopup_popup_footer_menu02_title" name="searchpopup_popup_footer_menu02_title" type="text" class="input-text" value="<?php echo esc_html($searchpopup_popup_footer_menu02_title); ?>" >
 						</p>
 						<?php 
 							$menus = wp_get_nav_menus();
@@ -82,7 +82,7 @@ function expandup_searchpopup_popup_footer_page(){
 									$val = esc_attr($menu->term_id);
 									$name = esc_html($menu->name);
 									$check = selected( $searchpopup_popup_footer_menu02, $val );
-									echo '<option value="' . $val . '" '.$check.' >' . $name . '</option>';
+									echo '<option value="' . esc_attr($val) . '" ' . $check . '>' . esc_html($name) . '</option>';
 								}
 								echo '</select>';								
 							} else {
@@ -99,7 +99,7 @@ function expandup_searchpopup_popup_footer_page(){
 					<td>
 						<p>
 							<label for="searchpopup_popup_footer_menu03_title" class="label"><?php esc_html_e('Enter a title for this section. If left blank, nothing will be shown', 'searchpopup_textdomain'); ?></label>
-							<br><input id="searchpopup_popup_footer_menu03_title" name="searchpopup_popup_footer_menu03_title" type="text" class="input-text" value="<?php echo $searchpopup_popup_footer_menu03_title; ?>" >
+							<br><input id="searchpopup_popup_footer_menu03_title" name="searchpopup_popup_footer_menu03_title" type="text" class="input-text" value="<?php echo esc_html($searchpopup_popup_footer_menu03_title); ?>" >
 						</p>
 						<?php 
 							$menus = wp_get_nav_menus();
@@ -110,7 +110,7 @@ function expandup_searchpopup_popup_footer_page(){
 									$val = esc_attr($menu->term_id);
 									$name = esc_html($menu->name);
 									$check = selected( $searchpopup_popup_footer_menu03, $val );
-									echo '<option value="' . $val . '" '.$check.' >' . $name . '</option>';
+									echo '<option value="' . esc_attr($val) . '" ' . $check . '>' . esc_html($name) . '</option>';									
 								}
 								echo '</select>';								
 							} else {
@@ -125,7 +125,7 @@ function expandup_searchpopup_popup_footer_page(){
 						<p><label for="searchpopup_popup_footer_title" class="label"><?php esc_html_e('Enter a title for this section. If left blank, nothing will be shown', 'searchpopup_textdomain'); ?></label></p>
 					</td>
 					<td>
-						<input id="searchpopup_popup_footer_title" name="searchpopup_popup_footer_title" type="text" class="input-text-100" value="<?php echo $searchpopup_popup_footer_title; ?>" >
+						<input id="searchpopup_popup_footer_title" name="searchpopup_popup_footer_title" type="text" class="input-text-100" value="<?php echo esc_html($searchpopup_popup_footer_title); ?>" >
 					</td>
 				</tr>
 				<tr>

@@ -19,7 +19,7 @@ function expandup_searchpopup_popup_general_page(){
 				$searchpopup_popup_smart_images_settings = get_option('searchpopup_popup_smart_images_settings', false);
 				$searchpopup_popup_card_image_size = get_option('searchpopup_popup_card_image_size', false);
 			?>	
-			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'searchpopup_textdomain'); ?><span class="plugin-version">Version: <?php echo EXPANDUP_SEARCHPOPUP_VERSION; ?></span></h1>
+			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'searchpopup_textdomain'); ?><span class="plugin-version">Version: <?php echo esc_html(EXPANDUP_SEARCHPOPUP_VERSION); ?></span></h1>
 			<h3 class="adm-page-subtitle"><?php esc_html_e('General', 'searchpopup_textdomain'); ?></h3>
 			<form id="opt-page" method="post" action="options.php" >
             <table class="styled-table">
@@ -41,7 +41,7 @@ function expandup_searchpopup_popup_general_page(){
 						<p><label for="searchpopup_where_to_use" class="label"><?php esc_html_e('Enter the ids or class of your search forms', 'searchpopup_textdomain'); ?></label><p>
 					</td>
 					<td>
-					<textarea id="searchpopup_where_to_use" name="searchpopup_where_to_use" rows="6" cols="50" class="input-text-100"><?php echo $searchpopup_where_to_use; ?></textarea>
+					<textarea id="searchpopup_where_to_use" name="searchpopup_where_to_use" rows="6" cols="50" class="input-text-100"><?php echo esc_html($searchpopup_where_to_use); ?></textarea>
 					<p><?php esc_html_e("It's important to separate multiple forms with commas when identifying them. You can use the form's ID or a unique class associated with it. You can also combine ID and class for more precise targeting. Here are some examples:", 'searchpopup_textdomain'); ?></p>
 					<p>
 						<b>#form-header</b><br>
@@ -80,11 +80,11 @@ function expandup_searchpopup_popup_general_page(){
 							</div>
 							<p>
                                 <label for="searchpopup_preloader_icon_color"><?php esc_html_e('Preloader icon color:', 'searchpopup_textdomain'); ?></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_preloader_icon_color" name="searchpopup_preloader_icon_color" value="<?php echo $searchpopup_preloader_icon_color; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_preloader_icon_color" name="searchpopup_preloader_icon_color" value="<?php echo esc_html($searchpopup_preloader_icon_color); ?>">
                             </p>
 							<p>
                                 <label for="searchpopup_popup_background"><?php esc_html_e('Popup background color:', 'searchpopup_textdomain'); ?></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_popup_background" name="searchpopup_popup_background" value="<?php echo $searchpopup_popup_background; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_popup_background" name="searchpopup_popup_background" value="<?php echo esc_html($searchpopup_popup_background); ?>">
                             </p>                            
 					</td>
 				</tr>
@@ -96,7 +96,7 @@ function expandup_searchpopup_popup_general_page(){
 					<td>
 							<p>
 								<label for="searchpopup_popup_transparency"><?php esc_html_e('Transparency:', 'searchpopup_textdomain'); ?></label>
-								<input type="number" id="searchpopup_popup_transparency" name="searchpopup_popup_transparency" min="0" max="1" step="0.01" value="<?php echo $searchpopup_popup_transparency; ?>">
+								<input type="number" id="searchpopup_popup_transparency" name="searchpopup_popup_transparency" min="0" max="1" step="0.01" value="<?php echo esc_html($searchpopup_popup_transparency); ?>">
                             </p>
 							
 					</td>
@@ -135,13 +135,14 @@ function expandup_searchpopup_popup_general_page(){
 
 								if (!empty($registered_image_sizes)) {
 									foreach ($registered_image_sizes as $size) {
-										// Obtém as dimensões do tamanho da imagem
-										$dimensions = image_get_intermediate_size($size);
-
-										// Se as dimensões estiverem disponíveis, concatene-as com o nome do tamanho
+										
+										$dimensions = image_get_intermediate_size($size);										
 										$size_label = $dimensions ? $size . ' (' . $dimensions['width'] . 'x' . $dimensions['height'] . ')' : $size;
+										
+										$size_value = esc_attr($size);
+										$selected_attr = selected($searchpopup_popup_card_image_size, $size, false);
 
-										echo '<option value="' . $size . '" ' . selected($searchpopup_popup_card_image_size, $size) . ' >' . $size_label . '</option>';
+										echo '<option value="' . $size_value . '" ' . $selected_attr . ' >' . esc_html($size_label) . '</option>';
 									}
 								}
 								?>

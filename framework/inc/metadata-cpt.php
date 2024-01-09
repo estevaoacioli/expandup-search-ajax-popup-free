@@ -70,7 +70,7 @@ function expandup_searchpopup_cpt_msap_metas_display(){
 				<p><label for="searchpopup_section_position" class="label"><?php esc_html_e('Select a number for the position of this section in the popup, the order of the sections is ascending', 'searchpopup_textdomain'); ?></label>
 			</td>
 			<td>
-                <input type="number" id="searchpopup_section_position" name="searchpopup_section_position" min="0" max="999" step="1" value="<?php echo $searchpopup_section_position; ?>" required>
+                <input type="number" id="searchpopup_section_position" name="searchpopup_section_position" min="0" max="999" step="1" value="<?php echo esc_html($searchpopup_section_position); ?>" required>
 			</td>
 		</tr>							
 		<tr>
@@ -95,14 +95,15 @@ function expandup_searchpopup_cpt_msap_metas_display(){
                     foreach ($cpts as $cpt_key => $cpt_label) {
                         $labels = get_post_type_labels(get_post_type_object($cpt_key)); // Obtenha as etiquetas corretas
                         if (!in_array($cpt_key, $remove_itens)) {
-                            $selected = ($searchpopup_section_cpt === $cpt_key) ? 'selected' : '';
-                            echo '<option value="' . $cpt_key . '" ' . $selected . '>' . $labels->singular_name . '</option>';
+                            $selected = ($searchpopup_section_cpt === $cpt_key) ? 'selected' : '';                            
+							echo '<option value="' . esc_attr($cpt_key) . '" ' . $selected . '>' . esc_html($labels->singular_name) . '</option>';
+
                         }
                     }
                     ?>
                 </select>
                 <p><?php esc_html_e('If you want to search in a specific category, just paste its slug in the field below, leave it blank to search in all. You can also paste several slugs, separated by commas', 'searchpopup_textdomain'); ?><br>
-                <input id="searchpopup_section_categories" name="searchpopup_section_categories" style="width: 100%;" type="text" class="input-text" value="<?php echo $searchpopup_section_categories; ?>">
+                <input id="searchpopup_section_categories" name="searchpopup_section_categories" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_html($searchpopup_section_categories); ?>">
                 </p>
             </td>
 		</tr>
@@ -119,8 +120,8 @@ function expandup_searchpopup_cpt_msap_metas_display(){
 									1 => esc_html__('Show the latest posts from this CPT', 'searchpopup_textdomain'),
 									2 => esc_html__('Completely hide the section', 'searchpopup_textdomain')
 					);
-					foreach ($search_opts as $key => $label) {																
-						echo '<option value="' . $key . '" '.selected( $searchpopup_section_cpt_not_found, $key ).'>' . $label . '</option>';							
+					foreach ($search_opts as $key => $label) {		
+						echo '<option value="' . esc_attr($key) . '" ' . selected($searchpopup_section_cpt_not_found, $key, false) . '>' . esc_html($label) . '</option>';							
 					}
 					?>							
 				</select>
@@ -135,7 +136,7 @@ function expandup_searchpopup_cpt_msap_metas_display(){
 				<select name="searchpopup_section_qty" id="searchpopup_section_qty" required>
 					<?php
 						for ($i = 3; $i <= 21; $i += 3) {
-								echo '<option value="' . $i . '" '.selected( $searchpopup_section_qty, $i ).'>' . $i . '</option>';
+							echo '<option value="' . esc_attr($i) . '" ' . selected($searchpopup_section_qty, absint($i), false) . '>' . absint($i) . '</option>';								
 						}															
 					?>							
 				</select>
@@ -153,7 +154,7 @@ function expandup_searchpopup_cpt_msap_metas_display(){
 					<option value="1" <?php selected( $searchpopup_section_show_more, 1 ); ?>><?php esc_html_e('Yes', 'searchpopup_textdomain'); ?></option>							
 				</select>
 				<p><label for="searchpopup_see_all_results_text" class="label"><?php esc_html_e('Enter text for the see all results button if left blank the default text will be displayed "See all results"', 'searchpopup_textdomain'); ?></label>
-				<input id="searchpopup_see_all_results_text" name="searchpopup_see_all_results_text" style="width: 100%;" type="text" class="input-text" value="<?php echo $searchpopup_see_all_results_text; ?>" >
+				<input id="searchpopup_see_all_results_text" name="searchpopup_see_all_results_text" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_html($searchpopup_see_all_results_text); ?>" >
 			    
 			</td>
 		</tr>					
@@ -163,7 +164,7 @@ function expandup_searchpopup_cpt_msap_metas_display(){
 				<p><label for="searchpopup_section_title" class="label"><?php esc_html_e('Enter a title for this section. If left blank, nothing will be shown', 'searchpopup_textdomain'); ?></label>
 			</td>
 			<td>
-				<input id="searchpopup_section_title" name="searchpopup_section_title" style="width: 100%;" type="text" class="input-text" value="<?php echo $searchpopup_section_title; ?>" >
+				<input id="searchpopup_section_title" name="searchpopup_section_title" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_html($searchpopup_section_title); ?>" >
 			</td>
 		</tr>
 		<tr>
@@ -173,9 +174,9 @@ function expandup_searchpopup_cpt_msap_metas_display(){
 			</td>
 			<td>
                 <p><label for="searchpopup_section_btn_text" class="label"><?php esc_html_e('Enter text for the section link, if left blank the link will not be shown', 'searchpopup_textdomain'); ?></label>
-				<input id="searchpopup_section_btn_text" name="searchpopup_section_btn_text" style="width: 100%;" type="text" class="input-text" value="<?php echo $searchpopup_section_btn_text; ?>" >
+				<input id="searchpopup_section_btn_text" name="searchpopup_section_btn_text" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_html($searchpopup_section_btn_text); ?>" >
                 <p><label for="searchpopup_section_btn_link" class="label"><?php esc_html_e('Enter the link for the button.', 'searchpopup_textdomain'); ?></label>
-                <input id="searchpopup_section_btn_link" name="searchpopup_section_btn_link" style="width: 100%;" type="text" class="input-text" value="<?php echo $searchpopup_section_btn_link; ?>" >
+                <input id="searchpopup_section_btn_link" name="searchpopup_section_btn_link" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_url_raw($searchpopup_section_btn_link); ?>" >
 			</td>
 		</tr>								
 	    <tr>
@@ -200,9 +201,9 @@ function expandup_searchpopup_cpt_msap_metas_display(){
 											$check = 'checked';
 										} else {
 											$check = '';
-										}										
-										echo '<input type="checkbox" name="searchpopup_section_layout_hide_items[]" value="' . $key . '" id="' . $key . '" '.$check.'>';
-										echo '<label for="' . $key . '">' . $label . '</label><br>';
+										}
+										echo '<input type="checkbox" name="searchpopup_section_layout_hide_items[]" value="' . esc_attr($key) . '" id="' . esc_attr($key) . '" ' . $check . '>';
+										echo '<label for="' . esc_attr($key) . '">' . esc_html($label) . '</label><br>';
 						}
 					?>
                 </p>
@@ -216,23 +217,24 @@ function expandup_searchpopup_cpt_msap_metas_display(){
 				<p><?php esc_html_e('Mark the elements you want to hide', 'searchpopup_textdomain'); ?></p>						
 			</td>
             <td>	
-                <p>                                
-                    <?php  
-                        $items = array(
-                                            'navigation' => esc_html__('Hide Navigation', 'searchpopup_textdomain'),
-                                            'pagination' => esc_html__('Hide Pagination', 'searchpopup_textdomain')										
-                        );
-                        foreach ($items as $key => $label) {
-                            if ($searchpopup_section_layout_slider_hide_items !== false && is_array($searchpopup_section_layout_slider_hide_items) && in_array($key, $searchpopup_section_layout_slider_hide_items)) {
-                                    $check = 'checked';
-                            } else {
-                                    $check = '';
-                        }										
-                        echo '<input type="checkbox" name="searchpopup_section_layout_slider_hide_items[]" value="' . $key . '" id="' . $key . '" '.$check.'>';
-                                            echo '<label for="' . $key . '">' . $label . '</label><br>';
-                                }
-                        ?>
-                    </p>								
+			<p>
+				<?php  
+				$items = array(
+					'navigation' => esc_html__('Hide Navigation', 'searchpopup_textdomain'),
+					'pagination' => esc_html__('Hide Pagination', 'searchpopup_textdomain')										
+				);
+
+				foreach ($items as $key => $label) {
+					$check = '';
+					if ($searchpopup_section_layout_slider_hide_items !== false && is_array($searchpopup_section_layout_slider_hide_items) && in_array($key, $searchpopup_section_layout_slider_hide_items)) {
+						$check = 'checked';
+					}
+
+					echo '<input type="checkbox" name="searchpopup_section_layout_slider_hide_items[]" value="' . esc_attr($key) . '" id="' . esc_attr($key) . '" ' . $check . '>';
+					echo '<label for="' . esc_attr($key) . '">' . esc_html($label) . '</label><br>';
+				}
+				?>
+			</p>								
             </td>
 		</tr>				
 	</table>	
