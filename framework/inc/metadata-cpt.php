@@ -244,9 +244,11 @@ function searchpopup_cpt_msap_meta_save($post_id) {
 
     // Checks save status
     $is_autosave = wp_is_post_autosave($post_id);
-    $is_revision = wp_is_post_revision($post_id);
-    $is_valid_nonce = ( isset($_POST['searchpopup_cpt_msap_nonce']) && wp_verify_nonce($_POST['searchpopup_cpt_msap_nonce'], basename(__FILE__)) ) ? 'true' : 'false';
-
+    $is_revision = wp_is_post_revision($post_id);  
+	$is_valid_nonce = (
+		isset($_POST['searchpopup_cpt_msap_nonce']) &&
+		wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['searchpopup_cpt_msap_nonce'])), basename(__FILE__))
+	) ? 'true' : 'false';
     // Exits script depending on save status
     if ($is_autosave || $is_revision || !$is_valid_nonce) {
         return;
@@ -283,8 +285,7 @@ function searchpopup_cpt_msap_meta_save($post_id) {
     update_post_meta($post_id, 'searchpopup_section_show_more', $searchpopup_section_show_more);
 
 	$searchpopup_see_all_results_text = isset($_POST['searchpopup_see_all_results_text']) ? sanitize_text_field($_POST['searchpopup_see_all_results_text']) : '';
-    update_post_meta($post_id, 'searchpopup_see_all_results_text', $searchpopup_see_all_results_text);
-	
+    update_post_meta($post_id, 'searchpopup_see_all_results_text', $searchpopup_see_all_results_text);	
 
     // Section Title
     $searchpopup_section_title = isset($_POST['searchpopup_section_title']) ? sanitize_text_field($_POST['searchpopup_section_title']) : '';
@@ -294,8 +295,8 @@ function searchpopup_cpt_msap_meta_save($post_id) {
     $searchpopup_section_btn_text = isset($_POST['searchpopup_section_btn_text']) ? sanitize_text_field($_POST['searchpopup_section_btn_text']) : '';
     update_post_meta($post_id, 'searchpopup_section_btn_text', $searchpopup_section_btn_text);
 
-    // Section Button Link
-    $searchpopup_section_btn_link = isset($_POST['searchpopup_section_btn_link']) ? esc_url($_POST['searchpopup_section_btn_link']) : '';
+	// Section Button Link
+	$searchpopup_section_btn_link = isset($_POST['searchpopup_section_btn_link']) ? esc_url_raw($_POST['searchpopup_section_btn_link']) : '';
     update_post_meta($post_id, 'searchpopup_section_btn_link', $searchpopup_section_btn_link);
 
     // Layout Components - Hide Items
