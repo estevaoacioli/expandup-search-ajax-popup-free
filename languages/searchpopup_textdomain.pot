@@ -311,7 +311,7 @@ msgstr ""
 
 #. URI of the plugin
 #. Author URI of the plugin
-msgid "https://expandup.tech/"
+msgid "https://expandupwp.com/"
 msgstr ""
 
 #: framework/inc/settings-popup_general.php:129
