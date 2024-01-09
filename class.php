@@ -155,7 +155,7 @@ class ExpandUpSearchPopup{
 			$posts_itens = searchpopup_loop_cpt_latest($args['cpt'], $args['categories'], $args['qty']);
 			$posts = $posts_itens['itens'];
 			$total = $posts_itens['total'];
-			$text_latest = __("We didn't find anything in this search, but the items below may interest you.", 'searchpopup_textdomain');
+			$text_latest = esc_html__("We didn't find anything in this search, but the items below may interest you.", 'searchpopup_textdomain');
 		} else {
 			$posts = false;
 			$total = false;
@@ -164,7 +164,7 @@ class ExpandUpSearchPopup{
 			
 				$c .= '<div class="swiper-slide">';
 				$c .= '<div class="searchpopup-card-item">';
-				$c .= '<p class="s-error">'. __('Nothing found in this search', 'searchpopup_textdomain').'</p>';           
+				$c .= '<p class="s-error">'. esc_html__('Nothing found in this search', 'searchpopup_textdomain').'</p>';           
 				$c .= '</div>';
 				$c .= '</div>';
            

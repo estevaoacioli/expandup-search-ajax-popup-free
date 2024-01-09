@@ -15,22 +15,22 @@ function expandup_searchpopup_popup_header_page(){
 				$searchpopup_header_background = false;	
 				$searchpopup_header_colors_style = false;
 			?>	
-			<h1 class="adm-page-title"><?php _e('Expand UP - Multiple Search Ajax Popup', 'searchpopup_textdomain'); ?><span class="plugin-version">Version: <?php echo EXPANDUP_SEARCHPOPUP_VERSION; ?></span></h1>
-			<h3 class="adm-page-subtitle"><?php _e('Popup Header', 'searchpopup_textdomain'); ?></h3>
+			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'searchpopup_textdomain'); ?><span class="plugin-version">Version: <?php echo EXPANDUP_SEARCHPOPUP_VERSION; ?></span></h1>
+			<h3 class="adm-page-subtitle"><?php esc_html_e('Popup Header', 'searchpopup_textdomain'); ?></h3>
 			<form id="opt-page" method="post" action="options.php" >
             <table class="styled-table">
 				<tr>
 					<td>
-						<h3><?php _e('Popup Header Colors Style', 'searchpopup_textdomain'); ?></h3>
-						<p><?php _e('Choose colors to customize your popup and form', 'searchpopup_textdomain'); ?></p>
+						<h3><?php esc_html_e('Popup Header Colors Style', 'searchpopup_textdomain'); ?></h3>
+						<p><?php esc_html_e('Choose colors to customize your popup and form', 'searchpopup_textdomain'); ?></p>
 					</td>
 					<td>
 							<div class="control-colors">
-								<p><?php _e('Activate custom colors?', 'searchpopup_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></p>
+								<p><?php esc_html_e('Activate custom colors?', 'searchpopup_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></p>
 								<input type="hidden" value="off" name="searchpopup_header_colors_style">
 								<ul class="control-wrap">	        
 									<li class="dimension-wrap">
-										<p id="label-text-status"><?php _e('Disabled', 'searchpopup_textdomain'); ?></p>
+										<p id="label-text-status"><?php esc_html_e('Disabled', 'searchpopup_textdomain'); ?></p>
 									</li>
 									<li class="dimension-wrap">
 										<label class="switch">
@@ -39,20 +39,20 @@ function expandup_searchpopup_popup_header_page(){
 										</label>	                
 									</li>						 
 									<li class="dimension-wrap">
-										<p id="label-text-status"><?php _e('Activated', 'searchpopup_textdomain'); ?></p>
+										<p id="label-text-status"><?php esc_html_e('Activated', 'searchpopup_textdomain'); ?></p>
 									</li>	
 								</ul>
 							</div>
 							<p>
-                                <label for="searchpopup_close_icon_color"><?php _e('Close icon color:', 'searchpopup_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
+                                <label for="searchpopup_close_icon_color"><?php esc_html_e('Close icon color:', 'searchpopup_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
                                 <input type="text" class="input-use-wp-color-picker" id="searchpopup_close_icon_color" name="searchpopup_close_icon_color" value="<?php echo $searchpopup_close_icon_color; ?>">
                             </p>
 							<p>
-                                <label for="searchpopup_close_icon_background"><?php _e('Popup background color:', 'searchpopup_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
+                                <label for="searchpopup_close_icon_background"><?php esc_html_e('Popup background color:', 'searchpopup_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
                                 <input type="text" class="input-use-wp-color-picker" id="searchpopup_close_icon_background" name="searchpopup_close_icon_background" value="<?php echo $searchpopup_close_icon_background; ?>">
                             </p>    
 							<p>
-                                <label for="searchpopup_header_background"><?php _e('Popup background color:', 'searchpopup_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
+                                <label for="searchpopup_header_background"><?php esc_html_e('Popup background color:', 'searchpopup_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
                                 <input type="text" class="input-use-wp-color-picker" id="searchpopup_header_background" name="searchpopup_header_background" value="<?php echo $searchpopup_header_background; ?>">
                             </p>    							
 							                         

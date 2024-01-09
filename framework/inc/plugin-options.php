@@ -94,10 +94,7 @@ function expandup_searchpopup_settings(){
 		'default' => NULL,
 	));
 
-	// Popup WooCommerce	
-	// pro versios
 	
-
 }
 
 ?>

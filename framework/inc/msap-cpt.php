@@ -47,9 +47,9 @@ function populate_custom_columns_for_msap_list($column, $post_id) {
         case 'searchpopup_section_activate':
             $searchpopup_section_activate = intval(get_post_meta($post_id, 'searchpopup_section_activate', true));
             if($searchpopup_section_activate === 1){
-                _e('Yes', 'searchpopup_textdomain');
+                esc_html_e('Yes', 'searchpopup_textdomain');
             } else {
-                _e('No', 'searchpopup_textdomain');
+                esc_html_e('No', 'searchpopup_textdomain');
             }            
             break;
 
