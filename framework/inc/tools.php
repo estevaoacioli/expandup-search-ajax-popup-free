@@ -48,15 +48,15 @@ function expandup_searchpopup_menu_items_to_list($menu_id) {
 function expandup_searchpopup_help_links() {    
     $html = '';
     $html .= '<div class="help-links">';
-    $html .= '<a href="https://expandup.tech/" target="_blank" >Expand UP Tech</a>';
+    $html .= '<a href="https://expandupwp.com/" target="_blank" >Expand UP WP</a>';
     $html .= ' | ';
-    $html .= '<a href="https://expandup.tech/support/" target="_blank" >Support</a>';
+    $html .= '<a href="https://expandupwp.com/support/" target="_blank" >Support</a>';
     $html .= ' | ';
-    $html .= '<a href="https://expandup.tech/products/" target="_blank" >Other Products</a>';
+    $html .= '<a href="https://expandupwp.com/products/" target="_blank" >Other Products</a>';
     $html .= ' | ';
-    $html .= '<a href="https://expandup.tech/exp-product/multiple-search-ajax-popup/" target="_blank" >Product Page</a>';
+    $html .= '<a href="https://expandupwp.com/exp-product/multiple-search-ajax-popup/" target="_blank" >Product Page</a>';
     $html .= ' | ';
-    $html .= '<a href="https://expand-up.gitbook.io/expand-up-multiple-search-ajax-popup/" target="_blank" >Documentation</a>';
+    $html .= '<a href="https://documentation.expandupwp.com/multiple-search-ajax-popup/" target="_blank" >Documentation</a>';
     $html .= '</div>';
 
     return $html;

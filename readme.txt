@@ -23,9 +23,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 *  Seamless Integration: Our plugin seamlessly integrates with WordPress, ensuring a smooth and user-friendly implementation.
 
 
-Demo: [Live Preview](https://demos.expandup.tech/searchpopup-popup/demo-store/)
-Documentation: [View Documentation](https://expand-up.gitbook.io/expand-up-multiple-search-ajax-popup/)
-Contact Support: [Support Form](https://expandup.tech/support/)
+Demo: [Live Preview](https://demos.expandupwp.com/searchpopup-popup/demo-store/)
+Documentation: [View Documentation](https://documentation.expandupwp.com/multiple-search-ajax-popup/)
+Contact Support: [Support Form](https://expandupwp.com/support/)
 
 == Pro Version == 
 
@@ -34,7 +34,7 @@ Contact Support: [Support Form](https://expandup.tech/support/)
 *  Customize Popup Footer Colors
 
 
-PRO version: [Get Now](https://expandup.tech/exp-product/multiple-search-ajax-popup/)
+PRO version: [Get Now](https://expandupwp.com/exp-product/multiple-search-ajax-popup/)
 
 = Native language =
 
