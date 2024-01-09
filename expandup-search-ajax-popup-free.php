@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Expand UP - Multiple Search Ajax Popup FREE
-Plugin URI: https://expandup.tech/
+Plugin URI: https://expandupwp.com/exp-product/multiple-search-ajax-popup/
 Description: Plugin for conducting AJAX searches and displaying results in a popup; the results are displayed in a segmented manner
-Author: Expand UP
+Author: Expand UP WP
 Version: 1.0.0
-Author URI: https://expandup.tech/
+Author URI: https://expandupwp.com/
 Text Domain: searchpopup_textdomain
 Domain Path: /languages
 License: GPLv2 or later
@@ -28,7 +28,6 @@ define('EXPANDUP_SEARCHPOPUP_PATH', plugin_dir_path(__FILE__));
 define('EXPANDUP_SEARCHPOPUP_URL', plugin_dir_url(__FILE__));
 define('EXPANDUP_SEARCHPOPUP_SITE_URL', get_home_url());
 define('EXPANDUP_SEARCHPOPUP_PRODUCT_NAME', 'Multiple Search Ajax Popup');
-define('EXPANDUP_SEARCHPOPUP_PRODUCT_SKU', 'P-01');
 define('EXPANDUP_SEARCHPOPUP_VERSION', '1.0.0');
 define('SEARCH_POPUP_ACTIVE', intval(get_option('searchpopup_activate')));
 

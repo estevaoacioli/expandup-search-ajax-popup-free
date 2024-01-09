@@ -1,5 +1,5 @@
 === Expand UP - Multiple Search Ajax Popup FREE ===
-Contributors: Expand UP
+Contributors: expandupwp, estevao_acioli
 Tags: search, ajax, popup, results
 Requires at least: 4.9
 Tested up to: 6.3.2

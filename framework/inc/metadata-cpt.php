@@ -261,10 +261,11 @@ function expandup_searchpopup_cpt_msap_meta_save($post_id) {
     // Section Activate
     $searchpopup_section_activate = isset($_POST['searchpopup_section_activate']) ? sanitize_text_field($_POST['searchpopup_section_activate']) : '0';
     update_post_meta($post_id, 'searchpopup_section_activate', $searchpopup_section_activate);
+    
+	// Section Position
+	$searchpopup_section_position = isset($_POST['searchpopup_section_position']) ? absint(sanitize_text_field($_POST['searchpopup_section_position'])) : 0;
+	update_post_meta($post_id, 'searchpopup_section_position', $searchpopup_section_position);
 
-    // Section Position
-    $searchpopup_section_position = isset($_POST['searchpopup_section_position']) ? absint($_POST['searchpopup_section_position']) : 0;
-    update_post_meta($post_id, 'searchpopup_section_position', $searchpopup_section_position);
 
     // Section CPT
     $searchpopup_section_cpt = isset($_POST['searchpopup_section_cpt']) ? sanitize_text_field($_POST['searchpopup_section_cpt']) : '';
@@ -279,7 +280,7 @@ function expandup_searchpopup_cpt_msap_meta_save($post_id) {
     update_post_meta($post_id, 'searchpopup_section_cpt_not_found', $searchpopup_section_cpt_not_found);
 
     // Section Quantity
-    $searchpopup_section_qty = isset($_POST['searchpopup_section_qty']) ? absint($_POST['searchpopup_section_qty']) : 3;
+    $searchpopup_section_qty = isset($_POST['searchpopup_section_qty']) ? absint(sanitize_text_field($_POST['searchpopup_section_qty'])) : 3;
     update_post_meta($post_id, 'searchpopup_section_qty', $searchpopup_section_qty);
 
     // Section Show More
@@ -298,7 +299,7 @@ function expandup_searchpopup_cpt_msap_meta_save($post_id) {
     update_post_meta($post_id, 'searchpopup_section_btn_text', $searchpopup_section_btn_text);
 
 	// Section Button Link
-	$searchpopup_section_btn_link = isset($_POST['searchpopup_section_btn_link']) ? esc_url_raw($_POST['searchpopup_section_btn_link']) : '';
+	$searchpopup_section_btn_link = isset($_POST['searchpopup_section_btn_link']) ? sanitize_text_field($_POST['searchpopup_section_btn_link']) : '';
     update_post_meta($post_id, 'searchpopup_section_btn_link', $searchpopup_section_btn_link);
 
     // Layout Components - Hide Items
