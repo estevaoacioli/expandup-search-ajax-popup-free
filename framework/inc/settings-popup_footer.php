@@ -14,10 +14,7 @@ function expandup_searchpopup_popup_footer_page(){
 				$searchpopup_popup_footer_menu01 = get_option('searchpopup_popup_footer_menu01', false);
 				$searchpopup_popup_footer_menu02 = get_option('searchpopup_popup_footer_menu02', false);
 				$searchpopup_popup_footer_menu03 = get_option('searchpopup_popup_footer_menu03', false);
-				$searchpopup_popup_footer_title = get_option('searchpopup_popup_footer_title', false);
-				$searchpopup_popup_footer_background = false;
-				$searchpopup_popup_footer_text_color = false;
-				$searchpopup_popup_footer_colors_style = false;
+				$searchpopup_popup_footer_title = get_option('searchpopup_popup_footer_title', false);				
 				$searchpopup_popup_footer_menu01_title = get_option('searchpopup_popup_footer_menu01_title', false);
 				$searchpopup_popup_footer_menu02_title = get_option('searchpopup_popup_footer_menu02_title', false);
 				$searchpopup_popup_footer_menu03_title = get_option('searchpopup_popup_footer_menu03_title', false);
@@ -139,14 +136,14 @@ function expandup_searchpopup_popup_footer_page(){
 					<td>	
 							<div class="control-colors">
 								<p><?php esc_html_e('Activate custom colors?', 'searchpopup_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></p>
-								<input type="hidden" value="off" name="searchpopup_popup_footer_colors_style">
+								<input type="hidden" value="off">
 								<ul class="control-wrap">	        
 									<li class="dimension-wrap">
 										<p id="label-text-status"><?php esc_html_e('Disabled', 'searchpopup_textdomain'); ?></p>
 									</li>
 									<li class="dimension-wrap">
 										<label class="switch">
-										<input type="checkbox" name="searchpopup_popup_footer_colors_style" value="on"  <?php if ($searchpopup_popup_footer_colors_style === 'on'){echo 'checked="checked"';}?>>
+										<input type="checkbox" value="on" >
 										<span class="slider round"></span>
 										</label>	                
 									</li>						 
@@ -157,11 +154,11 @@ function expandup_searchpopup_popup_footer_page(){
 							</div>						
 							<p>
                                 <label for="searchpopup_popup_footer_background"><?php esc_html_e('Section background color:', 'searchpopup_textdomain'); ?></label> <span style="color: #ff0000;">(Pro Version)</span><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_popup_footer_background" name="searchpopup_popup_footer_background" value="<?php echo $searchpopup_popup_footer_background; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_popup_footer_background" value="">
                             </p>
 							<p>
                                 <label for="searchpopup_popup_footer_text_color"><?php esc_html_e('Section text color:', 'searchpopup_textdomain'); ?></label> <span style="color: #ff0000;">(Pro Version)</span><br>
-                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_popup_footer_text_color" name="searchpopup_popup_footer_text_color" value="<?php echo $searchpopup_popup_footer_text_color; ?>">
+                                <input type="text" class="input-use-wp-color-picker" id="searchpopup_popup_footer_text_color" value="">
                             </p>								
 					</td>
 				</tr>		
