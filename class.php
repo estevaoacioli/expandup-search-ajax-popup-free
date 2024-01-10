@@ -4,12 +4,12 @@ if (!defined('ABSPATH')) {
 }
 class ExpandUpSearchPopup{
 
-	private $options;	
+	private $options;		
 	
 	public function __construct() { 
 		add_action('init', 'expandup_searchpopup_register_msap_cpt');
-		if( SEARCH_POPUP_ACTIVE === 1 ) {			
-			add_action('admin_menu', array($this, 'expandup_searchpopup_admin_menu'), 9999);
+		add_action('admin_menu', array($this, 'expandup_searchpopup_admin_menu'), 9999);
+		if( SEARCH_POPUP_ACTIVE === 1 ) {	
 			add_action('wp_footer', array($this, 'expandup_searchpopup_add_popup_html_to_footer'));
 			add_action('wp_enqueue_scripts', array($this, 'expandup_searchpopup_front_scripts'));	
 		}
