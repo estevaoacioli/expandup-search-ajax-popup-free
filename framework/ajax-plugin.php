@@ -7,10 +7,7 @@ function expmsap_content() {
     $msg = 'Error 404';
     $html = '';  
     if (isset($_POST['s'])) {
-        $s = sanitize_text_field($_POST['s']);        
-        $icons = expmsap_svgs();
-        $icon_calendar =  $icons['calendar'];
-        $icon_search =  $icons['search'];
+        $s = sanitize_text_field($_POST['s']);   
         $site_url = site_url(); 
         $expmsap_popup_footer_activate = intval(get_option('expmsap_popup_footer_activate', false));
 
@@ -18,7 +15,7 @@ function expmsap_content() {
             $expandUpSearchPopup = new ExpandUpSearchPopup();  
             
             // Popup Header
-            $html .= expmsap_html_popup_section_top($s, $site_url, $icon_search);  
+            $html .= expmsap_html_popup_section_top($s, $site_url);  
             
             $slider_options = expmsap_cpt_msap_loop();
 

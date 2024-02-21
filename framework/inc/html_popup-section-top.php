@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function expmsap_html_popup_section_top($s, $site_url, $icon_search){
+function expmsap_html_popup_section_top($s, $site_url){
     $html = '';   
     $html .= '<div id="row-header-popup" class="row row-top">';
     $html .= '<div class="expmsap-popup-content">';
@@ -11,7 +11,7 @@ function expmsap_html_popup_section_top($s, $site_url, $icon_search){
     $html .= '<div id="content-expmsap">';
     $html .= '<form id="expmsapsearch-form" action="'.$site_url.'" method="get" role="search">';
     $html .= '<div class="expmsapsearch-search-form__container">';
-    $html .= '<span class="icon-search">'. $icon_search. '</span>';
+    $html .= '<span class="icon-search"><img src="'.EXPMSAP_URL.'/assets/images/search-icon.svg" alt="icon" width="18" height="18" /></span>';
     $html .= '<input id="expmsapsearch-search-form__input" placeholder="' . esc_attr(__('Search...', 'expmsap_textdomain')) . '" type="search" name="s" value="' . esc_attr($s) . '">';
     $html .= '</div>';
     $html .= '</form>';

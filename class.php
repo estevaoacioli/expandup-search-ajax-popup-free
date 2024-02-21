@@ -141,10 +141,7 @@ class ExpandUpSearchPopup{
 			'category',
 			'date'
 		);		
-		$text_latest = false;
-		$icons = expmsap_svgs();
-		$icon_calendar =  $icons['calendar'];
-		$icon_search =  $icons['search'];
+		$text_latest = false;		
 		$c = '';
 
 		$posts_results = expmsap_loop_cpt($s, $args['cpt'], $args['categories'], $args['qty']);		
@@ -175,9 +172,9 @@ class ExpandUpSearchPopup{
 		} else {
             foreach ($posts as $post) {	
 				if( $args['cpt'] === 'product') {
-					$c .= expmsap_html_card_woo($args, $post, $icon_calendar);
+					$c .= expmsap_html_card_woo($args, $post);
 				} else {
-					$c .= expmsap_html_card_cpt($args, $post, $icon_calendar);
+					$c .= expmsap_html_card_cpt($args, $post);
 				}			
                 
             }
