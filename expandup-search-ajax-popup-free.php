@@ -51,7 +51,6 @@ require_once( 'framework/inc/settings-popup_footer.php' );
 require_once( 'framework/inc/settings-woocommerce.php' );
 
 // Main HTMl Files
-require_once( 'framework/inc/svgs.php' );
 require_once( 'framework/inc/html_footer.php' );
 require_once( 'framework/inc/html_card_cpt.php' );
 require_once( 'framework/inc/html_popup-section-top.php' );
