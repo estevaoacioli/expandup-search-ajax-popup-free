@@ -42,7 +42,6 @@ require_once( 'framework/inc/loop-cpt-latest.php' );
 require_once( 'framework/inc/msap_loop.php' );
 require_once( 'framework/inc/msap-cpt.php' );
 require_once( 'framework/inc/metadata-cpt.php' );
-require_once( 'class.php' );
 
 require_once( 'framework/ajax-plugin.php' );
 require_once( 'framework/inc/settings-popup_general.php' );
@@ -55,3 +54,5 @@ require_once( 'framework/inc/html_footer.php' );
 require_once( 'framework/inc/html_card_cpt.php' );
 require_once( 'framework/inc/html_popup-section-top.php' );
 require_once( 'framework/inc/html_popup-section-popup-footer.php' );
+
+require_once( 'class.php' );

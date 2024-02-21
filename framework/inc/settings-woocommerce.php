@@ -7,7 +7,7 @@ function expmsap_woocommerce_page(){
 ?>
 <div class="wrap" >
 		<div class="adm-page-content">
-			<?php echo expmsap_help_links(); ?>
+			<?php expmsap_help_links(); ?>
 			<?php settings_errors(); ?>
 			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'expmsap_textdomain'); ?><span class="plugin-version">Version: <?php echo EXPMSAP_VERSION; ?></span></h1>
 			<h3 class="adm-page-subtitle"><?php esc_html_e('Woocommerce Settings', 'expmsap_textdomain'); ?></h3>
@@ -166,7 +166,7 @@ function expmsap_woocommerce_page(){
 				
 				</div>
 			</form>
-			<?php echo expmsap_help_links(); ?>
+			<?php expmsap_help_links(); ?>
 		</div>	
 </div>
 <script>

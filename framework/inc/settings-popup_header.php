@@ -7,7 +7,7 @@ function expmsap_popup_header_page(){
 ?>
 <div class="wrap" >
 		<div class="adm-page-content">
-			<?php echo expmsap_help_links(); ?>
+			<?php expmsap_help_links(); ?>
 			<?php settings_errors(); ?>			
 			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'expmsap_textdomain'); ?><span class="plugin-version">Version: <?php echo EXPMSAP_VERSION; ?></span></h1>
 			<h3 class="adm-page-subtitle"><?php esc_html_e('Popup Header', 'expmsap_textdomain'); ?></h3>
@@ -39,7 +39,10 @@ function expmsap_popup_header_page(){
 							</div>
 							<p>
                                 <label for="expmsap_close_icon_color"><?php esc_html_e('Close icon color:', 'expmsap_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="expmsap_close_icon_color" value="">
+                                <select id="expmsap_activate">
+									<option><?php esc_html_e('Black', 'expmsap_textdomain'); ?></option>
+									<option><?php esc_html_e('White', 'expmsap_textdomain'); ?></option>													
+								</select>								
                             </p>
 							<p>
                                 <label for="expmsap_close_icon_background"><?php esc_html_e('Popup icon background color:', 'expmsap_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
@@ -62,7 +65,7 @@ function expmsap_popup_header_page(){
 				<p id="pro-vercion-only" style="display:none;color: red;font-size: 1.2em;">These options are only available in the pro version</p>
 				</div>
 			</form>
-			<?php echo expmsap_help_links(); ?>
+			<?php expmsap_help_links(); ?>
 		</div>	
 </div>
 <script>

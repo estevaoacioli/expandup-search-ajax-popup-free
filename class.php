@@ -26,14 +26,14 @@ class ExpandUpSearchPopup{
 	
 	// Add Pages admin
     public function expmsap_admin_menu() {  
-		add_submenu_page( 'edit.php?post_type=msap', 'Popup General', 'Popup General', 'manage_options', 'expmsap_popup_general', array( $this, 'expmsap_popup_general' ) );
-		add_submenu_page( 'edit.php?post_type=msap', 'Popup Header', 'Popup Header', 'manage_options', 'expmsap_popup_header', array( $this, 'expmsap_popup_header' ) );
-		add_submenu_page( 'edit.php?post_type=msap', 'Popup Footer', 'Popup Footer', 'manage_options', 'expmsap_popup_footer', array( $this, 'expmsap_popup_footer' ) );
-		add_submenu_page( 'edit.php?post_type=msap', 'WooCommerce', 'WooCommerce', 'manage_options', 'expmsap_woocommerce', array( $this, 'expmsap_woocommerce' ) );		
+		add_submenu_page( 'edit.php?post_type=msap', __('Popup General'), __('Popup General'), 'manage_options', 'expmsap_popup_general', array( $this, 'expmsap_popup_general' ) );
+		add_submenu_page( 'edit.php?post_type=msap', __('Popup Header'), __('Popup Header'), 'manage_options', 'expmsap_popup_header', array( $this, 'expmsap_popup_header' ) );
+		add_submenu_page( 'edit.php?post_type=msap', __('Popup Footer'), __('Popup Footer'), 'manage_options', 'expmsap_popup_footer', array( $this, 'expmsap_popup_footer' ) );
+		add_submenu_page( 'edit.php?post_type=msap', __('WooCommerce'), __('WooCommerce'), 'manage_options', 'expmsap_woocommerce', array( $this, 'expmsap_woocommerce' ) );		
     }
 
 	public function expmsap_popup_general() {
-		echo expmsap_popup_general_page(); 
+		expmsap_popup_general_page(); 
 	}
 	public function expmsap_popup_header() {
 		echo expmsap_popup_header_page(); 
@@ -53,7 +53,7 @@ class ExpandUpSearchPopup{
 	}
 
 	// Frontend styles and scripts
-	public function expmsap_front_scripts() {	
+	public function expmsap_front_scripts() {
 		$expmsap_add_to_cart_activate = intval(get_option('expmsap_add_to_cart_activate', false));	
 		// code CSS
 		wp_enqueue_style( 'expmsap-style', EXPMSAP_URL.'assets/css/expmsap.css', array(), EXPMSAP_VERSION );
@@ -96,9 +96,7 @@ class ExpandUpSearchPopup{
 			.sbl-circ-path { color: $expmsap_preloader_icon_color; }
 			#expmsap-popup { background-color: $bg_color; }						
 			";
-		}		
-
-		
+		}
 
 		return $custom_css;
 	}
@@ -171,11 +169,8 @@ class ExpandUpSearchPopup{
 
 		} else {
             foreach ($posts as $post) {	
-				if( $args['cpt'] === 'product') {
-					$c .= expmsap_html_card_woo($args, $post);
-				} else {
-					$c .= expmsap_html_card_cpt($args, $post);
-				}			
+				
+				$c .= expmsap_html_card_cpt($args, $post);							
                 
             }
         }

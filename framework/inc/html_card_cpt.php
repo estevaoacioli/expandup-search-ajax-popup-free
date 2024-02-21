@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function expspa_html_card_cpt($args, $post) {     
+function expmsap_html_card_cpt($args, $post) {     
     ob_start();
     ?>
     <div class="swiper-slide">

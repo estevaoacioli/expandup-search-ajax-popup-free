@@ -51,17 +51,20 @@ function expmsap_loop_cpt($s, $cpt, $categories, $qty) {
             
 
             if (!$thumbnail_url) {					
-                $thumbnail_url = EXPMSAP_URL.'assets/images/image-default.png';
+                $thumbnail_url = esc_url(EXPMSAP_URL).'assets/images/image-default.png';
             }						
             $post_title = get_the_title(); 
             
             $post_category = array();
 
            
+            if ($cpt === 'post') {                
+            
                 $categories = get_the_category();
                 if (!empty($categories)) {
                     $post_category[] = $categories[0]->name;
                 }
+            }	
             				
             $post_excerpt = get_the_excerpt();
             $max_words = 15;
@@ -79,8 +82,8 @@ function expmsap_loop_cpt($s, $cpt, $categories, $qty) {
                     'post_category' => $post_category,
                     'post_excerpt' => $post_excerpt,
                     'post_date' => $post_date,
-                    'price_regular' => isset($product_regular_price) ? $product_regular_price : '',
-                    'price_offer' => isset($product_sale_price) ? $product_sale_price : '',						
+                    'price_regular' => '',
+                    'price_offer' => '',						
                 );
             }
             $i++;

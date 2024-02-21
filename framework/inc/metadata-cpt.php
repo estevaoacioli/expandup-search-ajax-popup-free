@@ -94,10 +94,8 @@ function expmsap_cpt_msap_metas_display(){
                     
                     foreach ($cpts as $cpt_key => $cpt_label) {
                         $labels = get_post_type_labels(get_post_type_object($cpt_key)); // Obtenha as etiquetas corretas
-                        if (!in_array($cpt_key, $remove_itens)) {
-                            $selected = ($expmsap_section_cpt === $cpt_key) ? 'selected' : '';                            
-							echo '<option value="' . esc_attr($cpt_key) . '" ' . $selected . '>' . esc_html($labels->singular_name) . '</option>';
-
+                        if (!in_array($cpt_key, $remove_itens)) {							                                                      
+							echo '<option value="' . esc_attr($cpt_key) . '" ' . selected($expmsap_section_cpt, $cpt_key, false) . '>' . esc_html($labels->singular_name) . '</option>';
                         }
                     }
                     ?>
@@ -202,7 +200,7 @@ function expmsap_cpt_msap_metas_display(){
 										} else {
 											$check = '';
 										}
-										echo '<input type="checkbox" name="expmsap_section_layout_hide_items[]" value="' . esc_attr($key) . '" id="' . esc_attr($key) . '" ' . $check . '>';
+										echo '<input type="checkbox" name="expmsap_section_layout_hide_items[]" value="' . esc_attr($key) . '" id="' . esc_attr($key) . '" ' . esc_attr($check) . '>';
 										echo '<label for="' . esc_attr($key) . '">' . esc_html($label) . '</label><br>';
 						}
 					?>
@@ -230,7 +228,7 @@ function expmsap_cpt_msap_metas_display(){
 						$check = 'checked';
 					}
 
-					echo '<input type="checkbox" name="expmsap_section_layout_slider_hide_items[]" value="' . esc_attr($key) . '" id="' . esc_attr($key) . '" ' . $check . '>';
+					echo '<input type="checkbox" name="expmsap_section_layout_slider_hide_items[]" value="' . esc_attr($key) . '" id="' . esc_attr($key) . '" ' . esc_attr($check) . '>';
 					echo '<label for="' . esc_attr($key) . '">' . esc_html($label) . '</label><br>';
 				}
 				?>

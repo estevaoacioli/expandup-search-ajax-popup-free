@@ -8,7 +8,7 @@ function expmsap_content() {
     $html = '';  
     if (isset($_POST['s'])) {
         $s = sanitize_text_field($_POST['s']);   
-        $site_url = site_url(); 
+        $site_url = esc_url(site_url()); 
         $expmsap_popup_footer_activate = intval(get_option('expmsap_popup_footer_activate', false));
 
         if(!empty($s)){  

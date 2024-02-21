@@ -7,7 +7,7 @@ function expmsap_popup_footer_page(){
 ?>
 <div class="wrap" >
 		<div class="adm-page-content">
-			<?php echo expmsap_help_links(); ?>
+			<?php expmsap_help_links(); ?>
 			<?php settings_errors(); ?>
 			<?php
 				$expmsap_popup_footer_activate = get_option('expmsap_popup_footer_activate', false);
@@ -19,7 +19,7 @@ function expmsap_popup_footer_page(){
 				$expmsap_popup_footer_menu02_title = get_option('expmsap_popup_footer_menu02_title', false);
 				$expmsap_popup_footer_menu03_title = get_option('expmsap_popup_footer_menu03_title', false);
 			?>
-			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'expmsap_textdomain'); ?><span class="plugin-version">Version: <?php echo EXPMSAP_VERSION; ?></span></h1>
+			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'expmsap_textdomain'); ?><span class="plugin-version">Version: <?php echo esc_html(EXPMSAP_VERSION); ?></span></h1>
 			<h3 class="adm-page-subtitle"><?php esc_html_e('Popup Footer', 'expmsap_textdomain'); ?></h3>
 			<form id="opt-page" method="post" action="options.php" >
             <table class="styled-table">
@@ -174,7 +174,7 @@ function expmsap_popup_footer_page(){
 				?>
 				</div>
 			</form>
-			<?php echo expmsap_help_links(); ?>
+			<?php expmsap_help_links(); ?>
 		</div>	
 </div>
 <?php 

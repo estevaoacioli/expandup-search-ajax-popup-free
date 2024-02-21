@@ -1,6 +1,6 @@
 === Expand UP - Multiple Search Ajax Popup FREE ===
 Contributors: expandupwp, estevao_acioli
-Tags: search, ajax, popup, results
+Tags: search, search popup, woocommerce search, ajax search, search shortcode, live search, search plugin, custom search, search by post type, search by category, relevance search, search forms, search results, ajax
 Requires at least: 4.9
 Tested up to: 6.3.2
 Requires PHP: 7.0

@@ -3,11 +3,11 @@ if (!defined('ABSPATH')) {
     exit();
 }
 function expmsap_popup_general_page(){
-	ob_start();	
+	//ob_start();	
 ?>
 <div class="wrap" >
 		<div class="adm-page-content">
-			<?php echo expmsap_help_links(); ?>
+			<?php expmsap_help_links(); ?>
 			<?php settings_errors(); ?>
 			<?php				
 				$expmsap_activate = get_option('expmsap_activate', false);
@@ -69,7 +69,7 @@ function expmsap_popup_general_page(){
 									</li>
 									<li class="dimension-wrap">
 										<label class="switch">
-										<input type="checkbox" name="expmsap_popup_colors_style" value="on"  <?php if ($expmsap_popup_colors_style === 'on'){echo 'checked="checked"';}?>>
+										<input type="checkbox" name="expmsap_popup_colors_style" value="on"  <?php if ($expmsap_popup_colors_style === 'on'){echo esc_html('checked="checked"');}?>>
 										<span class="slider round"></span>
 										</label>	                
 									</li>						 
@@ -111,7 +111,7 @@ function expmsap_popup_general_page(){
 							<?php esc_html_e('By enabling this feature the plugin will create 1 custom image size to be used in your carousels. This way you can have better results in your presentations.', 'expmsap_textdomain'); ?>
 							</p>
                             <p><?php esc_html_e('We highly recommend using the plugin Regenerate Thumbnails to update your images, otherwise the old images will not have the new sizes.','expmsap_textdomain'); ?></p>
-                            <p><?php esc_html_e('To regenerate your thumbnails we recommend this plugin: ','expmsap_textdomain'); ?><a href="https://wordpress.org/plugins/regenerate-thumbnails/" target="_blank">Regenerate Thumbnails</a></p>
+                            <p><?php esc_html_e('To regenerate your thumbnails we recommend this plugin: ','expmsap_textdomain'); ?><a href="https://wordpress.org/plugins/regenerate-thumbnails/" target="_blank"><?php esc_html_e('Regenerate Thumbnails'); ?></a></p>
 							<select id="expmsap_popup_smart_images_settings" name="expmsap_popup_smart_images_settings" >
 								<option value="0" <?php selected( $expmsap_popup_smart_images_settings, 0 ); ?>><?php esc_html_e('No', 'expmsap_textdomain'); ?></option>
 								<option value="1" <?php selected( $expmsap_popup_smart_images_settings, 1 ); ?>><?php esc_html_e('Yes', 'expmsap_textdomain'); ?></option>	
@@ -139,10 +139,9 @@ function expmsap_popup_general_page(){
 										$dimensions = image_get_intermediate_size($size);										
 										$size_label = $dimensions ? $size . ' (' . $dimensions['width'] . 'x' . $dimensions['height'] . ')' : $size;
 										
-										$size_value = esc_attr($size);
 										$selected_attr = selected($expmsap_popup_card_image_size, $size, false);
 
-										echo '<option value="' . $size_value . '" ' . $selected_attr . ' >' . esc_html($size_label) . '</option>';
+										echo '<option value="' . esc_attr($size) . '" ' . $selected_attr . ' >' . esc_html($size_label) . '</option>';
 									}
 								}
 								?>
@@ -161,14 +160,14 @@ function expmsap_popup_general_page(){
 				?>
 				</div>
 			</form>
-			<?php echo expmsap_help_links(); ?>
+			<?php expmsap_help_links(); ?>
 		</div>	
 </div>
 <?php 
-		$object = ob_get_contents();
+		/*$object = ob_get_contents();
 		// Clean buffer
 		ob_end_clean();
 		// Return the content
-		return $object;
+		return $object;*/
 	} 
 ?>

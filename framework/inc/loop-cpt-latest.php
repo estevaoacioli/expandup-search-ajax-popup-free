@@ -8,7 +8,7 @@ function expmsap_loop_cpt_latest($cpt, $categories, $qty) {
     $args = array(
         'post_type' => $cpt,			
         'posts_per_page' => $posts_per_page,
-        'post_status' => 'publish',			
+        'post_status' => 'publish',		
     );
             
     if (!empty($categories)) {			
@@ -20,14 +20,6 @@ function expmsap_loop_cpt_latest($cpt, $categories, $qty) {
                         'terms' => explode(',', $categories),
                     )
                 );
-        } elseif ( $cpt === 'product' ) {
-            $args['tax_query'] = array(
-                array(
-                    'taxonomy' => 'product_cat',
-                    'field' => 'slug',
-                    'terms' =>  explode(',', $categories),
-                )
-            );
         }
     }
 
@@ -57,61 +49,14 @@ function expmsap_loop_cpt_latest($cpt, $categories, $qty) {
             
 
             if (!$thumbnail_url) {					
-                $thumbnail_url = EXPMSAP_URL.'assets/images/image-default.png';
+                $thumbnail_url = esc_url(EXPMSAP_URL).'assets/images/image-default.png';
             }					
             $post_title = get_the_title(); 
             
             $post_category = array();
 
-            if ($cpt === 'product') {
-                $product = wc_get_product($item_id);
-                if ($product) {
-                    $product_categories = wc_get_product_terms($product->get_id(), 'product_cat');
-                    if (!empty($product_categories)) {
-                        $post_category[] = $product_categories[0]->name;
-                    }
+            if ($cpt === 'post') {                
             
-                    if ($product->is_type('simple')) {
-                        $product_regular_price = wc_price($product->get_regular_price());
-                        $product_sale_price = $product->get_sale_price();
-                    
-                        if (empty($product_sale_price)) {
-                            $product_sale_price = null;
-                        } else {
-                            $product_sale_price = wc_price($product_sale_price);
-                        }
-                        
-                    } elseif ($product->is_type('variable')) {
-                        $variations = $product->get_available_variations();
-                        
-                        $min_price = null;
-                        $max_price = null;
-                    
-                        foreach ($variations as $variation) {
-                            $variation_product = wc_get_product($variation['variation_id']);
-                            $variation_regular_price = $variation_product->get_regular_price(); 
-                            $variation_sale_price = $variation_product->get_sale_price();
-                    
-                            if (!is_null($variation_regular_price)) {
-                                if (is_null($min_price) || $variation_regular_price < $min_price) {
-                                    $min_price = $variation_regular_price;
-                                }
-                                if (is_null($max_price) || $variation_regular_price > $max_price) {
-                                    $max_price = $variation_regular_price;
-                                }
-                            }
-                        }
-                    
-                        // Agora você pode criar a faixa de preços, mesmo que não haja variações
-                        $price_range = wc_price($min_price) . ' - ' . wc_price($max_price);
-                        $product_sale_price = null;
-                        $product_regular_price = $price_range;
-                    }					
-                    
-                }
-            }
-            
-            else {
                 $categories = get_the_category();
                 if (!empty($categories)) {
                     $post_category[] = $categories[0]->name;
@@ -133,8 +78,8 @@ function expmsap_loop_cpt_latest($cpt, $categories, $qty) {
                     'post_category' => $post_category,
                     'post_excerpt' => $post_excerpt,
                     'post_date' => $post_date,
-                    'price_regular' => isset($product_regular_price) ? $product_regular_price : '',
-                    'price_offer' => isset($product_sale_price) ? $product_sale_price : '',						
+                    'price_regular' => '',
+                    'price_offer' => '',						
                 );
             }
             $i++;
