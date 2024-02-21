@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit();
 }
 // Function to convert rgb and hex colors to rgba
-function expandup_searchpopup_convertColorToRGBA($color, $alpha) {
+function expmsap_convertColorToRGBA($color, $alpha) {
     // Checks if $color is in RGB format (example, "rgb(255, 0, 0)")
     if (preg_match('/^rgb\((\d+), (\d+), (\d+)\)$/', $color, $rgbMatches)) {
         $red = $rgbMatches[1];
@@ -30,7 +30,7 @@ function expandup_searchpopup_convertColorToRGBA($color, $alpha) {
     return $rgba;
 }
 
-function expandup_searchpopup_menu_items_to_list($menu_id) {    
+function expmsap_menu_items_to_list($menu_id) {    
     $menu_items = wp_get_nav_menu_items($menu_id);    
     if ($menu_items) {        
         $menu_list = '<ul>';
@@ -45,7 +45,7 @@ function expandup_searchpopup_menu_items_to_list($menu_id) {
     return $menu_list;
 }
 
-function expandup_searchpopup_help_links() {    
+function expmsap_help_links() {    
     $html = '';
     $html .= '<div class="help-links">';
     $html .= '<a href="https://expandupwp.com/" target="_blank" >Expand UP WP</a>';

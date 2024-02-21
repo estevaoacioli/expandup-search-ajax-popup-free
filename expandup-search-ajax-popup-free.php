@@ -6,11 +6,13 @@ Description: Plugin for conducting AJAX searches and displaying results in a pop
 Author: Expand UP WP
 Version: 1.0.0
 Author URI: https://expandupwp.com/
-Text Domain: searchpopup_textdomain
+Text Domain: expmsap_textdomain
 Domain Path: /languages
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html    
 */
+
+// Namespace: expmsap
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -18,18 +20,18 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Load translations
-add_action('plugins_loaded', 'expandup_searchpopup_load_textdomain');
-function expandup_searchpopup_load_textdomain() {
-    load_plugin_textdomain('searchpopup_textdomain', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+add_action('plugins_loaded', 'expmsap_load_textdomain');
+function expmsap_load_textdomain() {
+    load_plugin_textdomain('expmsap_textdomain', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 
 // Define Constants
-define('EXPANDUP_SEARCHPOPUP_PATH', plugin_dir_path(__FILE__));
-define('EXPANDUP_SEARCHPOPUP_URL', plugin_dir_url(__FILE__));
-define('EXPANDUP_SEARCHPOPUP_SITE_URL', get_home_url());
-define('EXPANDUP_SEARCHPOPUP_PRODUCT_NAME', 'Multiple Search Ajax Popup');
-define('EXPANDUP_SEARCHPOPUP_VERSION', '1.0.0');
-define('SEARCH_POPUP_ACTIVE', intval(get_option('searchpopup_activate')));
+define('EXPMSAP_PATH', plugin_dir_path(__FILE__));
+define('EXPMSAP_URL', plugin_dir_url(__FILE__));
+define('EXPMSAP_SITE_URL', get_home_url());
+define('EXPMSAP_PRODUCT_NAME', 'Multiple Search Ajax Popup');
+define('EXPMSAP_VERSION', '1.0.0');
+define('EXPMSAP_ACTIVE', intval(get_option('expmsap_activate')));
 
 // Main Files
 require_once( 'framework/inc/plugin-options.php' );

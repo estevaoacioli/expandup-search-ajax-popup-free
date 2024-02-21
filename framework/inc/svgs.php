@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function expandup_searchpopup_svgs(){ 
+function expmsap_svgs(){ 
     $icons = array();
     $icons['search'] = '<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="50.000000pt" height="50.000000pt" viewBox="0 0 50.000000 50.000000"

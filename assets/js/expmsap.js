@@ -52,13 +52,13 @@ function initAllSwipers() {
 initAllSwipers();
 
 function closeSearchPopup() {
-    $('#searchpopup-popup').hide();
-    $('#searchpopup-popup').empty();
+    $('#expmsap-popup').hide();
+    $('#expmsap-popup').empty();
     $('html, body').css('overflow', 'auto');
 }
 
 
-$('body').on("click", ".searchpopup-close", function(){  
+$('body').on("click", ".expmsap-close", function(){  
         closeSearchPopup(); 
         setTimeout(function() {
             location.reload();
@@ -72,20 +72,20 @@ function handleSearchSubmission(e) {
   
       if (searchTerm) {
           $('html, body').css('overflow', 'hidden');
-          $('#searchpopup-popup').removeClass('searchpopup-mask');
-          $('#searchpopup-popup').show().empty().html(preload);
+          $('#expmsap-popup').removeClass('expmsap-mask');
+          $('#expmsap-popup').show().empty().html(preload);
   
           var ajaxData = {
-              'url': searchpopup_ajax.ajax_url,
+              'url': expmsap_ajax.ajax_url,
               'type': 'POST',
               'data': {
-                  'action': 'expandup_searchpopup_content',
+                  'action': 'expmsap_content',
                   's': searchTerm
               },
               'dataType': 'json',
               success: function (data) {
                   if (data.status === 'success') {                      
-                      $('#searchpopup-popup').empty().html(data.html);
+                      $('#expmsap-popup').empty().html(data.html);
                       initAllSwipers();
                   } else {
                       console.log(data.msg);
@@ -103,6 +103,6 @@ if (typeof searchPopupWhereToUse !== 'undefined') {
     $('body').on('submit', searchPopupWhereToUse.join(', '), handleSearchSubmission);
 }
   
-$('body').on('submit', '#searchpopupsearch-form', handleSearchSubmission);
+$('body').on('submit', '#expmsapsearch-form', handleSearchSubmission);
      
 });

@@ -23,7 +23,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 *  Seamless Integration: Our plugin seamlessly integrates with WordPress, ensuring a smooth and user-friendly implementation.
 
 
-Demo: [Live Preview](https://demos.expandupwp.com/searchpopup-popup/demo-store/)
+Demo: [Live Preview](https://demos.expandupwp.com/expmsap-popup/demo-store/)
 Documentation: [View Documentation](https://documentation.expandupwp.com/multiple-search-ajax-popup/)
 Contact Support: [Support Form](https://expandupwp.com/support/)
 

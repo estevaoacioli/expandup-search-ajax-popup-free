@@ -3,9 +3,9 @@ jQuery(function($) {
     $('body').on("click", "#active-key", function(e){	
 		e.preventDefault();
         
-        var user_name = $("#searchpopup_user_name").val();
-		var app_password = $("#searchpopup_app_password").val();
-        var license_key = $("#searchpopup_license_key").val();
+        var user_name = $("#expmsap_user_name").val();
+		var app_password = $("#expmsap_app_password").val();
+        var license_key = $("#expmsap_license_key").val();
         if(!license_key || !app_password || !user_name){
             alert('Please fill in all fields!');
         } else {
@@ -16,7 +16,7 @@ jQuery(function($) {
                 type:		'POST',
                 dataType: 	'json',
                 data: {
-                    'action'		: 	'searchpopup_active_plugin_domain',
+                    'action'		: 	'expmsap_active_plugin_domain',
                     'user_name'		: 	user_name, 
                     'app_password'	: 	app_password,
                     'license_key'	: 	license_key,											
@@ -46,7 +46,7 @@ jQuery(function($) {
                 type:		'POST',
                 dataType: 	'json',
                 data: {
-                    'action'		: 	'searchpopup_remove_active_plugin_domain',                    										
+                    'action'		: 	'expmsap_remove_active_plugin_domain',                    										
             },
             success: function (response) {
                 $('#plugin-status .card-status').show();

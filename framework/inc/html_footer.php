@@ -2,8 +2,9 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function expandup_searchpopup_html_footer(){     
-    $html = ''; 
-    $html .= '<div id="searchpopup-popup" style="display: none;" data-v="'.EXPANDUP_SEARCHPOPUP_VERSION.'" >Search popup content</div>';
-    return $html; 
+function expmsap_html_footer() {
+    $html = '';
+    $version = esc_attr(EXPMSAP_VERSION);
+    $html .= '<div id="expmsap-popup" style="display: none;" data-v="' . $version . '">Search popup content</div>';
+    return $html;
 }
