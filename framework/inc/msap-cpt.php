@@ -65,4 +65,3 @@ function expmsap_populate_custom_columns_for_msap_list($column, $post_id) {
     }
 }
 add_action('manage_msap_posts_custom_column', 'expmsap_populate_custom_columns_for_msap_list', 10, 2);
-
