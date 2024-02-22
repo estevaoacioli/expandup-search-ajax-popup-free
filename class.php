@@ -74,9 +74,7 @@ class ExpandUpSearchPopup{
 		}
 		if($expmsap_add_to_cart_activate === 1) {			
 			wp_localize_script('expmsap', 'expmsap_add_to_cart_vars', array('nonce' => wp_create_nonce('expmsap_add_to_cart_nonce'),));
-		}
-		
-		
+		}		
 	}
 
 	// Frontend style inline 
