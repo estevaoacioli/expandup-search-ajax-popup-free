@@ -32,18 +32,7 @@ function expmsap_html_card_cpt($args, $post) {
             <?php  // Resume
             if (!in_array('resume', $args['itens'])) { ?>
                 <div class="post-excerpt"><?php echo esc_html($post['post_excerpt']); ?></div>
-            <?php } ?>
-            <?php // Price
-            if (!in_array('price', $args['itens']) && $args['cpt'] === 'product') { ?>
-                <div class="product-price">
-                    <?php if (!empty($post['price_offer'])) { ?>
-                        <span class="regular-old"><?php echo esc_html($post['price_regular']); ?></span>
-                        <span class="offer"><?php echo esc_html($post['price_offer']); ?></span>
-                    <?php } else { ?>
-                        <span class="regular"><?php echo esc_html($post['price_regular']); ?></span>
-                    <?php } ?>
-                </div>
-            <?php } ?>				
+            <?php } ?>           		
         </div>
     </div>
     <?php 
