@@ -56,15 +56,15 @@ class ExpandUpSearchPopup{
 	public function expmsap_front_scripts() {
 		$expmsap_add_to_cart_activate = intval(get_option('expmsap_add_to_cart_activate', false));	
 		// code CSS
-		wp_enqueue_style( 'expmsap-style', EXPMSAP_URL.'assets/css/expmsap.css', array(), EXPMSAP_VERSION );
-		wp_enqueue_style( 'expmsap-swiper-style', EXPMSAP_URL.'assets/css/swiper-bundle.min.css', array(), EXPMSAP_VERSION );
+		wp_enqueue_style( 'expmsap-style', esc_url(EXPMSAP_URL).'assets/css/expmsap.css', array(), esc_html(EXPMSAP_VERSION) );
+		wp_enqueue_style( 'expmsap-swiper-style', esc_url(EXPMSAP_URL).'assets/css/swiper-bundle.min.css', array(), esc_html(EXPMSAP_VERSION) );
 		$custom_css = self::expmsap_inline_styles();	
 		wp_add_inline_style('expmsap-style', $custom_css);			
 		
 		// code JS
 		wp_enqueue_script('jquery');		
-		wp_enqueue_script( 'expmsap-swiper', EXPMSAP_URL.'assets/js/swiper-bundle.min.js', array(), EXPMSAP_VERSION, true );	
-		wp_enqueue_script( 'expmsap', EXPMSAP_URL.'assets/js/expmsap.js', array(), EXPMSAP_VERSION, true );			
+		wp_enqueue_script( 'expmsap-swiper', esc_url(EXPMSAP_URL).'assets/js/swiper-bundle.min.js', array(), esc_html(EXPMSAP_VERSION), true );	
+		wp_enqueue_script( 'expmsap', esc_url(EXPMSAP_URL).'assets/js/expmsap.js', array(), esc_html(EXPMSAP_VERSION), true );			
 		wp_localize_script( 'expmsap', 'expmsap_ajax', array(
 			'ajax_url' => admin_url( 'admin-ajax.php' )
 		) );
@@ -113,10 +113,10 @@ class ExpandUpSearchPopup{
 	);
 		if ( in_array( $var, $pages) || $typenow === 'msap') {
 			wp_enqueue_style('wp-color-picker');
-			wp_enqueue_style( 'expmsap-admin-style', EXPMSAP_URL.'assets/css/expmsap-admin.css', array(), EXPMSAP_VERSION );
+			wp_enqueue_style( 'expmsap-admin-style', esc_url(EXPMSAP_URL).'assets/css/expmsap-admin.css', array(), esc_html(EXPMSAP_VERSION) );
 			wp_enqueue_script('jquery');        
         	wp_enqueue_script('wp-color-picker');
-			wp_enqueue_script( 'expmsap-admin-script', EXPMSAP_URL . 'assets/js/expmsap-admin.js', array('jquery'), EXPMSAP_VERSION, true );
+			wp_enqueue_script( 'expmsap-admin-script', esc_url(EXPMSAP_URL) . 'assets/js/expmsap-admin.js', array('jquery'), esc_html(EXPMSAP_VERSION), true );
 		}						
 	}
 	
