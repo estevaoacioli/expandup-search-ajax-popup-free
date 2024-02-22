@@ -3,7 +3,6 @@ if (!defined('ABSPATH')) {
     exit();
 }
 function expmsap_woocommerce_page(){
-	ob_start();
 ?>
 <div class="wrap" >
 		<div class="adm-page-content">
@@ -180,11 +179,6 @@ function expmsap_woocommerce_page(){
         });
     });
 </script>
-<?php 
-		$object = ob_get_contents();
-		/* Clean buffer */
-		ob_end_clean();
-		/* Return the content */
-		return $object;
+<?php 		
 	} 
 ?>

@@ -2,8 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function expmsap_popup_footer_page(){
-	ob_start();
+function expmsap_popup_footer_page(){	
 ?>
 <div class="wrap" >
 		<div class="adm-page-content">
@@ -177,11 +176,6 @@ function expmsap_popup_footer_page(){
 			<?php expmsap_help_links(); ?>
 		</div>	
 </div>
-<?php 
-		$object = ob_get_contents();
-		/* Clean buffer */
-		ob_end_clean();
-		/* Return the content */
-		return $object;
+<?php 		
 	} 
 ?>

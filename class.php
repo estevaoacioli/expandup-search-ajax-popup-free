@@ -36,15 +36,15 @@ class ExpandUpSearchPopup{
 		expmsap_popup_general_page(); 
 	}
 	public function expmsap_popup_header() {
-		echo expmsap_popup_header_page(); 
+		expmsap_popup_header_page(); 
 	}
 	
 	public function expmsap_popup_footer() {
-		echo expmsap_popup_footer_page(); 
+		expmsap_popup_footer_page(); 
 	}
 
 	public function expmsap_woocommerce() {
-		echo expmsap_woocommerce_page(); 
+		expmsap_woocommerce_page(); 
 	}
 
 	// Register general settings
