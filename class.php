@@ -26,10 +26,10 @@ class ExpandUpSearchPopup{
 	
 	// Add Pages admin
     public function expmsap_admin_menu() {  
-		add_submenu_page( 'edit.php?post_type=msap', __('Popup General'), __('Popup General'), 'manage_options', 'expmsap_popup_general', array( $this, 'expmsap_popup_general' ) );
-		add_submenu_page( 'edit.php?post_type=msap', __('Popup Header'), __('Popup Header'), 'manage_options', 'expmsap_popup_header', array( $this, 'expmsap_popup_header' ) );
-		add_submenu_page( 'edit.php?post_type=msap', __('Popup Footer'), __('Popup Footer'), 'manage_options', 'expmsap_popup_footer', array( $this, 'expmsap_popup_footer' ) );
-		add_submenu_page( 'edit.php?post_type=msap', __('WooCommerce'), __('WooCommerce'), 'manage_options', 'expmsap_woocommerce', array( $this, 'expmsap_woocommerce' ) );		
+		add_submenu_page( 'edit.php?post_type=msap', __('Popup General', 'expmsap_textdomain'), __('Popup General', 'expmsap_textdomain'), 'manage_options', 'expmsap_popup_general', array( $this, 'expmsap_popup_general' ) );
+		add_submenu_page( 'edit.php?post_type=msap', __('Popup Header', 'expmsap_textdomain'), __('Popup Header', 'expmsap_textdomain'), 'manage_options', 'expmsap_popup_header', array( $this, 'expmsap_popup_header' ) );
+		add_submenu_page( 'edit.php?post_type=msap', __('Popup Footer', 'expmsap_textdomain'), __('Popup Footer', 'expmsap_textdomain'), 'manage_options', 'expmsap_popup_footer', array( $this, 'expmsap_popup_footer' ) );
+		add_submenu_page( 'edit.php?post_type=msap', __('WooCommerce', 'expmsap_textdomain'), __('WooCommerce', 'expmsap_textdomain'), 'manage_options', 'expmsap_woocommerce', array( $this, 'expmsap_woocommerce' ) );		
     }
 
 	public function expmsap_popup_general() {
