@@ -54,7 +54,7 @@ function expmsap_menu_items_to_list($menu_id) {
 }
 
 
-function expmsap_help_links() {    ?>
+function expmsap_help_links() {  ?>
     <div class="help-links">
         <a href="https://expandupwp.com/" target="_blank" >Expand UP</a>
         <a href="https://expandupwp.com/support/" target="_blank" >Support</a>
@@ -62,5 +62,5 @@ function expmsap_help_links() {    ?>
         <a href="https://expandupwp.com/exp-product/multiple-search-ajax-popup/" target="_blank" >Product Page</a>
         <a href="https://documentation.expandupwp.com/multiple-search-ajax-popup/" target="_blank" >Documentation</a>
     </div>
-    <?php
+<?php
 }
