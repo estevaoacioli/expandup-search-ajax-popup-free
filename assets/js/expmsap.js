@@ -55,15 +55,30 @@ jQuery(function($) {
         $('#expmsap-popup').hide();
         $('#expmsap-popup').empty();
         $('html, body').css('overflow', 'auto');
-    }
-    
+    }    
     
     $('body').on("click", ".expmsap-close", function(){  
-            expmsapCloseSearchPopup(); 
+        var closePopup = $('#expmsap-popup').data('close');
+        expmsapCloseSearchPopup();             
+        if(closePopup === 2){
             setTimeout(function() {
                 location.reload();
-            }, 100);   
+            }, 100); 
+        }   
     }); 
+
+    $('body').on("click", "#expmsap-popup-mask", function(){  
+        var outPopup = $('#expmsap-popup').data('out');              
+        if(outPopup === 2){
+            expmsapCloseSearchPopup(); 
+        } else if(outPopup === 3){
+            expmsapCloseSearchPopup();  
+            setTimeout(function() {
+                location.reload();
+            }, 100); 
+        } else { /*  Do not do anything */ }
+    }); 
+    
     
     function expmsapHandleSearchSubmission(e) {
           e.preventDefault();

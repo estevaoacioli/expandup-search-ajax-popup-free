@@ -128,7 +128,7 @@ function expmsap_woocommerce_page(){
 									</li>	
 								</ul>
 							</div>						
-							<p><strong>Normal</strong></p>
+							<p><strong><?php esc_html_e('Normal', 'expmsap_textdomain'); ?></strong></p>
 							<p>
                                 <label for="expmsap_add_to_cart_text_color"><?php esc_html_e('Button text color:', 'expmsap_textdomain'); ?></label><br>
                                 <input type="text" class="input-use-wp-color-picker" id="expmsap_add_to_cart_text_color" value="">
@@ -142,7 +142,7 @@ function expmsap_woocommerce_page(){
                                 <input type="text" class="input-use-wp-color-picker" id="expmsap_add_to_cart_border" value="">
                             </p>
 															
-							<p><strong>Hover</strong></p>
+							<p><strong><?php esc_html_e('Hover', 'expmsap_textdomain'); ?></strong></p>
 							<p>
                                 <label for="expmsap_add_to_cart_text_color_hover"><?php esc_html_e('Button text color:', 'expmsap_textdomain'); ?></label><br>
                                 <input type="text" class="input-use-wp-color-picker" id="expmsap_add_to_cart_text_color_hover" value="">
@@ -161,7 +161,7 @@ function expmsap_woocommerce_page(){
 			</table>
 				<div class="options-footer-settings">
 				<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary big-size" value="Save Settings"></p>
-				<p id="pro-vercion-only" style="display:none;color: red;font-size: 1.2em;">These options are only available in the pro version</p>
+				<p id="pro-vercion-only" style="display:none;color: red;font-size: 1.2em;"><?php esc_html_e('These options are only available in the pro version', 'expmsap_textdomain'); ?></p>
 				
 				</div>
 			</form>

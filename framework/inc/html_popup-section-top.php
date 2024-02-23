@@ -3,7 +3,8 @@ if (!defined('ABSPATH')) {
     exit();
 }
 function expmsap_html_popup_section_top($s, $site_url){
-    $html = '';   
+    $html = ''; 
+    $html .= '<div id="expmsap-popup-mask"></div>';  
     $html .= '<div id="row-header-popup" class="row row-top">';
     $html .= '<div class="expmsap-popup-content">';
     $html .= '<span class="expmsap-close"><span class="rotate-x">×</span></span>';

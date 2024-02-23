@@ -173,7 +173,9 @@ function expmsap_popup_general_page(){
 							<input type="radio" id="click_out_popup_01" name="expmsap_click_out_popup[]" value="1" <?php checked( '1', $expmsap_click_out_popup, true ); ?> >
 							<label for="click_out_popup_01"><?php esc_html_e('Do not do anything', 'expmsap_textdomain'); ?></label><br>
 							<input type="radio" id="click_out_popup_02" name="expmsap_click_out_popup[]" value="2" <?php checked( '2', $expmsap_click_out_popup, true ); ?> >
-							<label for="click_out_popup_02"><?php esc_html_e('Close the popup', 'expmsap_textdomain'); ?></label>
+							<label for="click_out_popup_02"><?php esc_html_e('Close the popup', 'expmsap_textdomain'); ?></label></br>
+							<input type="radio" id="click_out_popup_03" name="expmsap_click_out_popup[]" value="3" <?php checked( '3', $expmsap_click_out_popup, true ); ?> >
+							<label for="click_out_popup_03"><?php esc_html_e('Close the popup and reload the page', 'expmsap_textdomain'); ?></label>
                             </p>	
 					</td>
 				</tr>	
