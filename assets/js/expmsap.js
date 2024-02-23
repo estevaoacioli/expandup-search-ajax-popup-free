@@ -95,7 +95,8 @@ jQuery(function($) {
                   'type': 'POST',
                   'data': {
                       'action': 'expmsap_content',
-                      's': searchTerm
+                      's': searchTerm,
+                      'expmsap_global_nonce': expmsap_nonce_vars.nonce,
                   },
                   'dataType': 'json',
                   success: function (data) {

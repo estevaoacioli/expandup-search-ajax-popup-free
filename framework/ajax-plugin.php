@@ -6,28 +6,24 @@ function expmsap_content() {
     $status= 'error';
     $msg = 'Error 404';
     $html = '';  
-    if (isset($_POST['s'])) {
+    if (isset($_POST['expmsap_global_nonce']) && wp_verify_nonce($_POST['expmsap_global_nonce'], 'expmsap-global-nonce')) {  
         $s = sanitize_text_field($_POST['s']);   
         $site_url = esc_url(site_url()); 
         $expmsap_popup_footer_activate = intval(get_option('expmsap_popup_footer_activate', false));
 
         if(!empty($s)){  
-            $expandUpSearchPopup = new ExpandUpSearchPopup();  
-            
+            $expandUpSearchPopup = new ExpandUpSearchPopup();              
             // Popup Header
-            $html .= expmsap_html_popup_section_top($s, $site_url);  
-            
+            $html .= expmsap_html_popup_section_top($s, $site_url); 
             $slider_options = expmsap_cpt_msap_loop();
 
             foreach($slider_options as $key => $value) {     
                 $html .= $expandUpSearchPopup->expmsap_cpt_website_html($value, $s);
-            }            
-
+            }
             // Popup Footer            
             if( $expmsap_popup_footer_activate === 1 ){
                 $html .= expmsap_html_popup_footer();
-            }       
-            
+            }
             $status= 'success';
             $msg = 'OK';
         }

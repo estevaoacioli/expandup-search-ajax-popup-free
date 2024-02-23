@@ -75,7 +75,8 @@ class ExpandUpSearchPopup{
 		) );
 		$expmsap_where_to_use = get_option('expmsap_where_to_use');			
 		if(!empty( $expmsap_where_to_use)) {			
-			wp_localize_script('expmsap', 'searchPopupWhereToUse', explode(",",$expmsap_where_to_use));
+			wp_localize_script('expmsap', 'searchPopupWhereToUse', explode(",",$expmsap_where_to_use));			
+			wp_localize_script('expmsap', 'expmsap_nonce_vars', array('nonce' => wp_create_nonce('expmsap-global-nonce'),));
 		}
 		if($expmsap_add_to_cart_activate === 1) {			
 			wp_localize_script('expmsap', 'expmsap_add_to_cart_vars', array('nonce' => wp_create_nonce('expmsap_add_to_cart_nonce'),));

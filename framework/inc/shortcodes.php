@@ -12,7 +12,7 @@ function expmsap_form_shortcode($atts) {
     ob_start();  
     if( $model == 1 && EXPMSAP_ACTIVE === 1){  
     ?>
-    <form id="expmsap_form_model_01" role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
+    <form id="expmsap_form_model_01" role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">        
         <label class="search-label">
             <span class="screen-reader-text"><?php esc_html_e('Search for:', 'expandup-search-ajax-popup-free'); ?></span>
             <input type="search" class="search-field" aria-label="Search input" autocomplete="off" placeholder="<?php esc_attr_e('Search...', 'expandup-search-ajax-popup-free'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
@@ -21,14 +21,14 @@ function expmsap_form_shortcode($atts) {
     </form>
     <?php }  elseif ( $model == 2 ) { ?>
 
-    <form id="expmsap_form_model_02" action="<?php echo home_url('/'); ?>" method="get" role="search">
+    <form id="expmsap_form_model_02" action="<?php echo home_url('/'); ?>" method="get" role="search">        
         <div class="form__container">
             <span class="icon-search"><img src="<?php echo esc_url(EXPMSAP_URL); ?>/assets/images/search-icon.svg" alt="icon" width="18" height="18" /></span>
             <input id="search-form__input" placeholder="<?php esc_attr_e('Search...', 'expandup-search-ajax-popup-free'); ?>" type="search" name="s" value="<?php echo get_search_query(); ?>">
         </div>
     </form>
     <?php }  elseif ( $model == 3 ) { ?>
-    <form id="expmsap_form_model_03" action="<?php echo home_url('/'); ?>" method="get" role="search">
+    <form id="expmsap_form_model_03" action="<?php echo home_url('/'); ?>" method="get" role="search">        
         <div class="form__container">            
             <input id="search-form__input" placeholder="<?php esc_attr_e('Search...', 'expandup-search-ajax-popup-free'); ?>" type="search" name="s" value="<?php echo get_search_query(); ?>">
             <span class="icon-search"><img src="<?php echo esc_url(EXPMSAP_URL); ?>/assets/images/search-icon.svg" alt="icon" width="18" height="18" /></span>
