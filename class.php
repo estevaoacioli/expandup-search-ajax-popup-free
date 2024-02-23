@@ -127,7 +127,7 @@ class ExpandUpSearchPopup{
 	}
 	
 	public function expmsap_add_popup_html_to_footer() {		
-		echo expmsap_html_footer();
+		expmsap_html_footer();
 	}	
 
 	public function expmsap_cpt_website_html($args, $s) {

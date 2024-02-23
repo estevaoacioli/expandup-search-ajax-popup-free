@@ -142,7 +142,7 @@ function expmsap_popup_general_page(){
 										
 										$selected_attr = selected($expmsap_popup_card_image_size, $size, false);
 
-										echo '<option value="' . esc_attr($size) . '" ' . $selected_attr . ' >' . esc_html($size_label) . '</option>';
+										echo '<option value="' . esc_attr($size) . '" ' . esc_attr($selected_attr) . ' >' . esc_html($size_label) . '</option>';
 									}
 								}
 								?>

@@ -8,6 +8,10 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+== Short Description ==
+
+Plugin for conducting AJAX searches and displaying results in a popup; the results are displayed in a segmented manner
+
 == General ==
 
 * Plugin for conducting AJAX searches and displaying results in a popup; the results are displayed in a segmented manner

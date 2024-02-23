@@ -8,7 +8,7 @@ function expmsap_woocommerce_page(){
 		<div class="adm-page-content">
 			<?php expmsap_help_links(); ?>
 			<?php settings_errors(); ?>
-			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'expandup-search-ajax-popup-free'); ?><span class="plugin-version">Version: <?php echo EXPMSAP_VERSION; ?></span></h1>
+			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'expandup-search-ajax-popup-free'); ?><span class="plugin-version">Version: <?php echo esc_html(EXPMSAP_VERSION); ?></span></h1>
 			<h3 class="adm-page-subtitle"><?php esc_html_e('Woocommerce Settings', 'expandup-search-ajax-popup-free'); ?></h3>
 			<form id="opt-page" method="post" action="#" >
             <table class="styled-table">

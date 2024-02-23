@@ -42,7 +42,7 @@ function expmsap_popup_footer_page(){
 					<td>
 					<p>
 						<label for="expmsap_popup_footer_menu01_title" class="label"><?php esc_html_e('Enter a title for this section. If left blank, nothing will be shown', 'expandup-search-ajax-popup-free'); ?></label>
-						<br><input id="expmsap_popup_footer_menu01_title" name="expmsap_popup_footer_menu01_title" type="text" class="input-text" value="<?php echo $expmsap_popup_footer_menu01_title; ?>" >
+						<br><input id="expmsap_popup_footer_menu01_title" name="expmsap_popup_footer_menu01_title" type="text" class="input-text" value="<?php echo esc_attr($expmsap_popup_footer_menu01_title); ?>" >
 					</p>
 						<?php 
 							$menus = wp_get_nav_menus();
@@ -53,7 +53,7 @@ function expmsap_popup_footer_page(){
 									$val = esc_attr($menu->term_id);
 									$name = esc_html($menu->name);
 									$check = selected( $expmsap_popup_footer_menu01, $val );
-									echo '<option value="' . esc_attr($val) . '" ' . $check . '>' . esc_html($name) . '</option>';
+									echo '<option value="' . esc_attr($val) . '" ' . esc_attr($check) . '>' . esc_html($name) . '</option>';
 								}
 								echo '</select>';								
 							} else {
@@ -81,7 +81,7 @@ function expmsap_popup_footer_page(){
 									$val = esc_attr($menu->term_id);
 									$name = esc_html($menu->name);
 									$check = selected( $expmsap_popup_footer_menu02, $val );
-									echo '<option value="' . esc_attr($val) . '" ' . $check . '>' . esc_html($name) . '</option>';
+									echo '<option value="' . esc_attr($val) . '" ' . esc_attr($check) . '>' . esc_html($name) . '</option>';
 								}
 								echo '</select>';								
 							} else {
@@ -109,7 +109,7 @@ function expmsap_popup_footer_page(){
 									$val = esc_attr($menu->term_id);
 									$name = esc_html($menu->name);
 									$check = selected( $expmsap_popup_footer_menu03, $val );
-									echo '<option value="' . esc_attr($val) . '" ' . $check . '>' . esc_html($name) . '</option>';									
+									echo '<option value="' . esc_attr($val) . '" ' . esc_attr($check) . '>' . esc_html($name) . '</option>';									
 								}
 								echo '</select>';								
 							} else {

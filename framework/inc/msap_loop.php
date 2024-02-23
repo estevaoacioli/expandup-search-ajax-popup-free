@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 function expmsap_cpt_msap_loop() {   
     $args = array(
         'post_type' => 'msap',
-        'posts_per_page' => -1,
+        'posts_per_page' => 10,
         'post_status' => 'publish',
         'meta_query' => array(
             array(
