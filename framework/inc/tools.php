@@ -53,7 +53,6 @@ function expmsap_menu_items_to_list($menu_id) {
     return $menu_list;
 }
 
-
 function expmsap_help_links() {  ?>
     <div class="help-links">
         <a href="https://expandupwp.com/" target="_blank" >Expand UP</a>

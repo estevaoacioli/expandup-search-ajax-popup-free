@@ -29,7 +29,7 @@ function expmsap_popup_header_page(){
 										<label class="switch">
 										<input type="checkbox" value="on" >
 										<span class="slider round"></span>
-										</label>	                
+										</label>
 									</li>						 
 									<li class="dimension-wrap">
 										<p id="label-text-status"><?php esc_html_e('Activated', 'expmsap_textdomain'); ?></p>
@@ -38,20 +38,16 @@ function expmsap_popup_header_page(){
 							</div>
 							<p>
                                 <label for="expmsap_close_icon_color"><?php esc_html_e('Close icon color:', 'expmsap_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
-                                <select id="expmsap_activate">
-									<option><?php esc_html_e('Black', 'expmsap_textdomain'); ?></option>
-									<option><?php esc_html_e('White', 'expmsap_textdomain'); ?></option>													
-								</select>								
+                                <input type="text" class="input-use-wp-color-picker" id="expmsap_close_icon_color" name="expmsap_close_icon_color" value="<?php echo esc_attr($expmsap_close_icon_color); ?>">							
                             </p>
 							<p>
                                 <label for="expmsap_close_icon_background"><?php esc_html_e('Popup icon background color:', 'expmsap_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
                                 <input type="text" class="input-use-wp-color-picker" id="expmsap_close_icon_background" value="">
-                            </p>    
+                            </p>
 							<p>
                                 <label for="expmsap_header_background"><?php esc_html_e('Popup header background color:', 'expmsap_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
                                 <input type="text" class="input-use-wp-color-picker" id="expmsap_header_background" value="">
-                            </p>    							
-							                         
+                            </p>
 					</td>
 				</tr>	
 				
