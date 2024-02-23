@@ -131,8 +131,7 @@ class ExpandUpSearchPopup{
 
 	public function expmsap_cpt_website_html($args, $s) {
 		// variables
-		$not_found = intval($args['not_found']);
-		//var_dump($not_found);
+		$not_found = intval($args['not_found']);		
 		$layout_slider_hide_items = $args['layout_slider_hide_items'];
 		$items = array(
 			'thumbnail',

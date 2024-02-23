@@ -6,7 +6,6 @@ if (!defined('ABSPATH')) {
 function expmsap_settings(){
 
 	// ################### Popup General  #################
-
 	register_setting('expmsap_opt_general', 'expmsap_activate', array(
 		'type' => 'integer',
 		'sanitize_callback' => 'expmsap_option_activate', 
@@ -47,6 +46,16 @@ function expmsap_settings(){
 		'sanitize_callback' => 'expmsap_sanitize_input_text',
 		'default' => NULL,
 	));
+	register_setting('expmsap_opt_general', 'expmsap_popup_click_on_close', array(
+		'type' => 'integer',
+		'sanitize_callback' => 'expmsap_sanitize_radio',
+		'default' => NULL,
+	));
+	register_setting('expmsap_opt_general', 'expmsap_click_out_popup', array(
+		'type' => 'integer',
+		'sanitize_callback' => 'expmsap_sanitize_radio',
+		'default' => NULL,
+	));	
 	
 	// ################### Popup Header #################
 				
@@ -93,7 +102,6 @@ function expmsap_settings(){
 		'sanitize_callback' => 'expmsap_sanitize_input_text',
 		'default' => NULL,
 	));
-
 	
 }
 

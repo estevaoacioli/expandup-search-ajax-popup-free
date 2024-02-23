@@ -31,6 +31,20 @@ function expmsap_sanitize_integer($input) {
 	$sanitized_value = intval($input);	
 	return $sanitized_value;
 }
+function expmsap_sanitize_radio($input) {		
+	if (is_array($input)) {		
+		$value = sanitize_text_field($input[0]);	
+		if(!empty($value)){
+			$sanitized_value = $value;
+			return $sanitized_value;
+		} else {
+			$sanitized_value = NULL;
+		}
+	} else {
+		$sanitized_value = NULL;
+	}	
+	return $sanitized_value;
+}
 function expmsap_sanitize_layout_items($input) {		
 	if (is_array($input)) {			
 		$allowed_keys = array('thumbnail', 'title', 'resume', 'price', 'category', 'date');	

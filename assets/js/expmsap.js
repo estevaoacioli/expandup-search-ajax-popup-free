@@ -1,6 +1,6 @@
 jQuery(function($) { 
     var mySwiper;    
-    function initSwipers(containerClass, nextButton, prevButton) {
+    function expmsapInitSwipers(containerClass, nextButton, prevButton) {
         $(containerClass).each(function () {
             var showPagination = true;
             var showNavigation = true;
@@ -38,20 +38,20 @@ jQuery(function($) {
         });
     }
     
-    function initAllSwipers() {    
+    function expmsapInitAllSwipers() {    
         $('.rom-slider .swiper-container').each(function() {
             var container = $(this);
             var dataId = container.data('id');
             var nextButton = '.swiper-button-next-' + dataId;
             var prevButton = '.swiper-button-prev-' + dataId;        
-            initSwipers(container, nextButton, prevButton);
+            expmsapInitSwipers(container, nextButton, prevButton);
         });
     }
     
     // Call the function to initialize all Swipers
-    initAllSwipers();
+    expmsapInitAllSwipers();
     
-    function closeSearchPopup() {
+    function expmsapCloseSearchPopup() {
         $('#expmsap-popup').hide();
         $('#expmsap-popup').empty();
         $('html, body').css('overflow', 'auto');
@@ -59,13 +59,13 @@ jQuery(function($) {
     
     
     $('body').on("click", ".expmsap-close", function(){  
-            closeSearchPopup(); 
+            expmsapCloseSearchPopup(); 
             setTimeout(function() {
                 location.reload();
             }, 100);   
     }); 
     
-    function handleSearchSubmission(e) {
+    function expmsapHandleSearchSubmission(e) {
           e.preventDefault();
           var searchTerm = $(this).find('input[name="s"]').val();
           var preload = '<div style="padding: 60px; text-align: center;"><div class="sbl-circ-path"></div></div>';
@@ -86,7 +86,7 @@ jQuery(function($) {
                   success: function (data) {
                       if (data.status === 'success') {                      
                           $('#expmsap-popup').empty().html(data.html);
-                          initAllSwipers();
+                          expmsapInitAllSwipers();
                       } else {
                           console.log(data.msg);
                       }
@@ -100,10 +100,10 @@ jQuery(function($) {
     }
       
     if (typeof searchPopupWhereToUse !== 'undefined') {
-        $('body').on('submit', searchPopupWhereToUse.join(', '), handleSearchSubmission);
+        $('body').on('submit', searchPopupWhereToUse.join(', '), expmsapHandleSearchSubmission);
     }
       
-    $('body').on('submit', '#expmsapsearch-form, #expmsap_form_model_01, #expmsap_form_model_02, #expmsap_form_model_03', handleSearchSubmission);
+    $('body').on('submit', '#expmsapsearch-form, #expmsap_form_model_01, #expmsap_form_model_02, #expmsap_form_model_03', expmsapHandleSearchSubmission);
     
     // Add to Cart button click event
     $('body').on('click', '.content-add-to-cart-button .popup_ajax_add_to_cart', function(e) {
@@ -143,12 +143,12 @@ jQuery(function($) {
                             break;
                         case 'close':
                             setTimeout(function() {
-                                closeSearchPopup();
+                                expmsapCloseSearchPopup();
                             }, 3000); // Ação após um atraso de 3 segundos (3000 milissegundos)
                             break;
                         case 'close-reload':
                             setTimeout(function() {
-                                closeSearchPopup();
+                                expmsapCloseSearchPopup();
                             }, 5000); // Ação após um atraso de 3 segundos (3000 milissegundos)
                             setTimeout(function() {
                                 location.reload();

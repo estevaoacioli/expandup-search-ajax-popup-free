@@ -65,11 +65,8 @@ function expmsap_popup_header_page(){
 </div>
 <script>
     jQuery(document).ready(function($) {
-        $('#opt-page').submit(function(event) {
-            // Impede o envio padrão do formulário
+        $('#opt-page').submit(function(event) {            
             event.preventDefault();
-
-            // Mostra o elemento com id "pro-vercion-only"
             $('#pro-vercion-only').show();
         });
     });

@@ -24,7 +24,7 @@ function expmsap_shortcode_page(){
 					<td>
 						<h3>Model 1</h3>
 						<label for="model01" style="display: block;">Shortcode:</label>
-  						<input type="text" id="model01" value='[expmsap_form model="1"]' readonly onclick="copyThisValue(this)">
+  						<input type="text" id="model01" value='[expmsap_form model="1"]' readonly onclick="expmsapCopyThisValue(this)">
 						<div class="response-copy"></div>						
 					</td>
 					<td>
@@ -35,7 +35,7 @@ function expmsap_shortcode_page(){
 					<td>
 						<h3>Model 2</h3>
 						<label for="model02" style="display: block;">Shortcode:</label>
-  						<input type="text" id="model02" value='[expmsap_form model="2"]' readonly onclick="copyThisValue(this)">
+  						<input type="text" id="model02" value='[expmsap_form model="2"]' readonly onclick="expmsapCopyThisValue(this)">
 						<div class="response-copy"></div>						
 					</td>
 					<td>
@@ -46,7 +46,7 @@ function expmsap_shortcode_page(){
 					<td>
 						<h3>Model 3</h3>
 						<label for="model03" style="display: block;">Shortcode:</label>
-  						<input type="text" id="model03" value='[expmsap_form model="3"]' readonly onclick="copyThisValue(this)">
+  						<input type="text" id="model03" value='[expmsap_form model="3"]' readonly onclick="expmsapCopyThisValue(this)">
 						<div class="response-copy"></div>					
 					</td>
 					<td>
@@ -55,7 +55,7 @@ function expmsap_shortcode_page(){
 				</tr>				
 			</table>
 			<script>
-				function copyThisValue(element) {    
+				function expmsapCopyThisValue(element) {    
 					element.select();    
 					document.execCommand('copy');  
 					element.blur();

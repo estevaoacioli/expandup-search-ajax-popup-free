@@ -3,7 +3,6 @@ if (!defined('ABSPATH')) {
     exit();
 }
 function expmsap_popup_general_page(){
-	//ob_start();	
 ?>
 <div class="wrap" >
 		<div class="adm-page-content">
@@ -18,6 +17,8 @@ function expmsap_popup_general_page(){
 				$expmsap_popup_colors_style = get_option('expmsap_popup_colors_style', false);	
 				$expmsap_popup_smart_images_settings = get_option('expmsap_popup_smart_images_settings', false);
 				$expmsap_popup_card_image_size = get_option('expmsap_popup_card_image_size', false);
+				$expmsap_popup_click_on_close = get_option('expmsap_popup_click_on_close', false);
+				$expmsap_click_out_popup = get_option('expmsap_click_out_popup', false);							
 			?>	
 			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'expmsap_textdomain'); ?><span class="plugin-version">Version: <?php echo esc_html(EXPMSAP_VERSION); ?></span></h1>
 			<h3 class="adm-page-subtitle"><?php esc_html_e('General', 'expmsap_textdomain'); ?></h3>
@@ -147,7 +148,35 @@ function expmsap_popup_general_page(){
 								?>
 							</select>							
 					</td>
-				</tr>		
+				</tr>
+				<tr>
+					<td>
+						<h3><?php esc_html_e('Click on close', 'expmsap_textdomain'); ?></h3>
+						<p><?php esc_html_e('Here you can choose what happens after the close icon is clicked.', 'expmsap_textdomain'); ?></p>
+					</td>
+					<td>
+							<p>
+							<input type="radio" id="click_on_close_01" name="expmsap_popup_click_on_close[]" value="1" <?php checked( '1', $expmsap_popup_click_on_close, true ); ?> >
+							<label for="click_on_close_01"><?php esc_html_e('Close the popup', 'expmsap_textdomain'); ?></label><br>
+							<input type="radio" id="click_on_close_02" name="expmsap_popup_click_on_close[]" value="2" <?php checked( '2', $expmsap_popup_click_on_close, true ); ?> >
+							<label for="click_on_close_02"><?php esc_html_e('Close the popup and reload the page', 'expmsap_textdomain'); ?></label>
+                            </p>	
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h3><?php esc_html_e('Click outside the popup', 'expmsap_textdomain'); ?></h3>
+						<p><?php esc_html_e('Here you can choose what happens when the user clicks away from the popup', 'expmsap_textdomain'); ?></p>
+					</td>
+					<td>
+							<p>
+							<input type="radio" id="click_out_popup_01" name="expmsap_click_out_popup[]" value="1" <?php checked( '1', $expmsap_click_out_popup, true ); ?> >
+							<label for="click_out_popup_01"><?php esc_html_e('Do not do anything', 'expmsap_textdomain'); ?></label><br>
+							<input type="radio" id="click_out_popup_02" name="expmsap_click_out_popup[]" value="2" <?php checked( '2', $expmsap_click_out_popup, true ); ?> >
+							<label for="click_out_popup_02"><?php esc_html_e('Close the popup', 'expmsap_textdomain'); ?></label>
+                            </p>	
+					</td>
+				</tr>	
 			</table>
 			<?php // The fields are sanitized in the expmsap_register_settings function within the class ?>					
 				<?php settings_fields('expmsap_opt_general'); ?>
@@ -164,10 +193,5 @@ function expmsap_popup_general_page(){
 		</div>	
 </div>
 <?php 
-		/*$object = ob_get_contents();
-		// Clean buffer
-		ob_end_clean();
-		// Return the content
-		return $object;*/
 	} 
 ?>
