@@ -30,6 +30,7 @@ class ExpandUpSearchPopup{
 		add_submenu_page( 'edit.php?post_type=msap', __('Popup Header', 'expmsap_textdomain'), __('Popup Header', 'expmsap_textdomain'), 'manage_options', 'expmsap_popup_header', array( $this, 'expmsap_popup_header' ) );
 		add_submenu_page( 'edit.php?post_type=msap', __('Popup Footer', 'expmsap_textdomain'), __('Popup Footer', 'expmsap_textdomain'), 'manage_options', 'expmsap_popup_footer', array( $this, 'expmsap_popup_footer' ) );
 		add_submenu_page( 'edit.php?post_type=msap', __('WooCommerce', 'expmsap_textdomain'), __('WooCommerce', 'expmsap_textdomain'), 'manage_options', 'expmsap_woocommerce', array( $this, 'expmsap_woocommerce' ) );		
+		add_submenu_page( 'edit.php?post_type=msap', __('Shortcodes'), __('Shortcodes'), 'manage_options', 'expmsap_shortcode', array( $this, 'expmsap_shortcode' ) );		
     }
 
 	public function expmsap_popup_general() {
@@ -45,6 +46,10 @@ class ExpandUpSearchPopup{
 
 	public function expmsap_woocommerce() {
 		expmsap_woocommerce_page(); 
+	}
+
+	public function expmsap_shortcode() {
+		expmsap_shortcode_page();
 	}
 
 	// Register general settings

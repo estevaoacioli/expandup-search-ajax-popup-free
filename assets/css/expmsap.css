@@ -1,3 +1,160 @@
+#expmsap_form_model_01{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+#expmsap_form_model_01 .screen-reader-text{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+#expmsap_form_model_01 .search-label{
+  width: 70%;
+  margin: 0 0 0 0;
+}
+#expmsap_form_model_01 .search-field{
+  color: #666666;
+  border-color: #ececec;
+  display: inline-block;
+  min-height: 40px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.8;
+  padding: 6px 12px;
+  vertical-align: middle;
+  background-color: rgba(0,0,0,0);
+  color: #333;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+#expmsap_form_model_01 .search-submit{
+  width: auto;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 14px 20px;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: .1em;
+  line-height: 1;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+#expmsap_form_model_01 .search-submit:hover{
+  opacity: 0.85;
+}
+#expmsap_form_model_02{
+  display: block;
+  transition: 0.2s;
+  width: 100%;  
+}
+#expmsap_form_model_02 .form__container {
+  background-color: transparent;
+  border-color: #e9e9e9;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#expmsap_form_model_02 #search-form__input {
+  color: #333333;
+  font-family: inherit;
+  margin: 0;
+  border: 0;
+  padding: 12px 15px;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: transparent;
+  line-height: 1;
+  width: calc(100% - 30px);
+  min-width: 80%;
+  font-size: 16px;
+}
+#expmsap_form_model_02 .form__container .icon-search {
+  display: flex;
+  margin: 0 15px 0 15px;
+  align-items: center;
+  justify-content: center;
+}
+#expmsap_form_model_02 .form__container .icon-search svg {
+  opacity: 0.6;
+  width: 18px;
+  height: 18px;
+}
+#expmsap_form_model_03{
+  display: block;
+  transition: 0.2s;
+  width: 100%;  
+}
+#expmsap_form_model_03 .form__container {
+  background-color: transparent;
+  border-color: #e9e9e9;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#expmsap_form_model_03 #search-form__input {
+  color: #333333;
+  font-family: inherit;
+  margin: 0;
+  border: 0;
+  padding: 12px 15px;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: transparent;
+  line-height: 1;
+  width: calc(100% - 30px);
+  min-width: 80%;
+  font-size: 16px;
+}
+#expmsap_form_model_03 .form__container .icon-search {
+  display: flex;
+  margin: 0 10px 0 15px;
+  align-items: center;
+  justify-content: center;
+}
+#expmsap_form_model_03 .form__container .icon-search svg {
+  opacity: 0.6;
+  width: 18px;
+  height: 18px;
+}
+
+
 .expmsap-mask{
   background-color: rgba(0, 0, 0, 0.42) !important;
 }
