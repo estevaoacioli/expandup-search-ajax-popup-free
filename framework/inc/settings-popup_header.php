@@ -38,7 +38,7 @@ function expmsap_popup_header_page(){
 							</div>
 							<p>
                                 <label for="expmsap_close_icon_color"><?php esc_html_e('Close icon color:', 'expmsap_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
-                                <input type="text" class="input-use-wp-color-picker" id="expmsap_close_icon_color" name="expmsap_close_icon_color" value="<?php echo esc_attr($expmsap_close_icon_color); ?>">							
+                                <input type="text" class="input-use-wp-color-picker" id="expmsap_close_icon_color" name="expmsap_close_icon_color" value="">							
                             </p>
 							<p>
                                 <label for="expmsap_close_icon_background"><?php esc_html_e('Popup icon background color:', 'expmsap_textdomain'); ?> <span style="color: #ff0000;">(Pro Version)</span></label><br>
