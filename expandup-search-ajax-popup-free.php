@@ -6,7 +6,7 @@ Description: Plugin for conducting AJAX searches and displaying results in a pop
 Author: Expand UP WP
 Version: 1.0.0
 Author URI: https://expandupwp.com/
-Text Domain: expmsap_textdomain
+Text Domain: expandup-search-ajax-popup-free
 Domain Path: /languages
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html    
@@ -20,7 +20,7 @@ if ( ! defined( 'WPINC' ) ) {
 // Load translations
 add_action('plugins_loaded', 'expmsap_load_textdomain');
 function expmsap_load_textdomain() {
-    load_plugin_textdomain('expmsap_textdomain', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+    load_plugin_textdomain('expandup-search-ajax-popup-free', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 
 // Define Constants

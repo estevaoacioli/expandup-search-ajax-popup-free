@@ -13,7 +13,7 @@ function expmsap_html_popup_section_top($s, $site_url){
     $html .= '<form id="expmsapsearch-form" action="' . esc_url($site_url) . '" method="get" role="search">';   
     $html .= '<div class="expmsapsearch-search-form__container">';    
     $html .= '<span class="icon-search"><img src="'. esc_url(EXPMSAP_URL) .'/assets/images/search-icon.svg" alt="icon" width="18" height="18" /></span>';
-    $html .= '<input id="expmsapsearch-search-form__input" placeholder="' . esc_attr(__('Search...', 'expmsap_textdomain'))  . '" type="search" name="s" value="' . esc_attr($s) . '">';
+    $html .= '<input id="expmsapsearch-search-form__input" placeholder="' . esc_attr(__('Search...', 'expandup-search-ajax-popup-free'))  . '" type="search" name="s" value="' . esc_attr($s) . '">';
     $html .= '</div>';
     $html .= '</form>';
     $html .= '</div>';

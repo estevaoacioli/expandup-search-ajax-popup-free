@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit();
 }
 function expmsap_cpt_msap_metas() {
-    add_meta_box('item-msap-fields', esc_html__('Slider Options', 'expmsap_textdomain'), 'expmsap_cpt_msap_metas_display', 'msap', 'normal', 'default');
+    add_meta_box('item-msap-fields', esc_html__('Slider Options', 'expandup-search-ajax-popup-free'), 'expmsap_cpt_msap_metas_display', 'msap', 'normal', 'default');
 }
 add_action('admin_init', 'expmsap_cpt_msap_metas');
 
@@ -54,20 +54,20 @@ function expmsap_cpt_msap_metas_display(){
     <table class="styled-table">
 		<tr>
 			<td>
-				<h3><?php esc_html_e('Activate this section', 'expmsap_textdomain'); ?></h3>
-				<p><label for="expmsap_section_activate" class="label"><?php esc_html_e('Do you want to activate this section?', 'expmsap_textdomain'); ?></label>
+				<h3><?php esc_html_e('Activate this section', 'expandup-search-ajax-popup-free'); ?></h3>
+				<p><label for="expmsap_section_activate" class="label"><?php esc_html_e('Do you want to activate this section?', 'expandup-search-ajax-popup-free'); ?></label>
 			</td>
 			<td>
 				<select name="expmsap_section_activate" id="expmsap_section_activate" required>
-					<option value="0" <?php selected( $expmsap_section_activate, 0 ); ?>><?php esc_html_e('No', 'expmsap_textdomain'); ?></option>
-					<option value="1" <?php selected( $expmsap_section_activate, 1 ); ?>><?php esc_html_e('Yes', 'expmsap_textdomain'); ?></option>							
+					<option value="0" <?php selected( $expmsap_section_activate, 0 ); ?>><?php esc_html_e('No', 'expandup-search-ajax-popup-free'); ?></option>
+					<option value="1" <?php selected( $expmsap_section_activate, 1 ); ?>><?php esc_html_e('Yes', 'expandup-search-ajax-popup-free'); ?></option>							
 				</select>
 			</td>
 		</tr>	
         <tr>
 			<td>
-				<h3><?php esc_html_e('Section position', 'expmsap_textdomain'); ?></h3>
-				<p><label for="expmsap_section_position" class="label"><?php esc_html_e('Select a number for the position of this section in the popup, the order of the sections is ascending', 'expmsap_textdomain'); ?></label>
+				<h3><?php esc_html_e('Section position', 'expandup-search-ajax-popup-free'); ?></h3>
+				<p><label for="expmsap_section_position" class="label"><?php esc_html_e('Select a number for the position of this section in the popup, the order of the sections is ascending', 'expandup-search-ajax-popup-free'); ?></label>
 			</td>
 			<td>
                 <input type="number" id="expmsap_section_position" name="expmsap_section_position" min="0" max="999" step="1" value="<?php echo esc_html($expmsap_section_position); ?>" required>
@@ -75,8 +75,8 @@ function expmsap_cpt_msap_metas_display(){
 		</tr>							
 		<tr>
 			<td>
-				<h3><?php esc_html_e('Search for', 'expmsap_textdomain'); ?></h3>
-				<p><?php esc_html_e('What type of content do you want to display in this search? Choose an option.', 'expmsap_textdomain'); ?></p>
+				<h3><?php esc_html_e('Search for', 'expandup-search-ajax-popup-free'); ?></h3>
+				<p><?php esc_html_e('What type of content do you want to display in this search? Choose an option.', 'expandup-search-ajax-popup-free'); ?></p>
 				<p><span style="color: #ff0000;">Attention: The Woocommerce product type is only available in the PRO version</span><p>
 			</td>
 		    <td>
@@ -100,23 +100,23 @@ function expmsap_cpt_msap_metas_display(){
                     }
                     ?>
                 </select>
-                <p><?php esc_html_e('If you want to search in a specific category, just paste its slug in the field below, leave it blank to search in all. You can also paste several slugs, separated by commas', 'expmsap_textdomain'); ?><br>
+                <p><?php esc_html_e('If you want to search in a specific category, just paste its slug in the field below, leave it blank to search in all. You can also paste several slugs, separated by commas', 'expandup-search-ajax-popup-free'); ?><br>
                 <input id="expmsap_section_categories" name="expmsap_section_categories" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_html($expmsap_section_categories); ?>">
                 </p>
             </td>
 		</tr>
 		<tr>
 			<td>
-				<h3><?php esc_html_e('Search not found', 'expmsap_textdomain'); ?></h3>
-				<p><label for="expmsap_section_cpt_not_found" class="label"><?php esc_html_e("What do you want to do if your search doesn't find anything?", 'expmsap_textdomain'); ?></label>
+				<h3><?php esc_html_e('Search not found', 'expandup-search-ajax-popup-free'); ?></h3>
+				<p><label for="expmsap_section_cpt_not_found" class="label"><?php esc_html_e("What do you want to do if your search doesn't find anything?", 'expandup-search-ajax-popup-free'); ?></label>
 			</td>
 			<td>						
 				<select name="expmsap_section_cpt_not_found" id="expmsap_section_cpt_not_found" required>						
 				<?php
 					$search_opts = array(
-									0 => esc_html__('Show only the text: Nothing found in this search.', 'expmsap_textdomain'),
-									1 => esc_html__('Show the latest posts from this CPT', 'expmsap_textdomain'),
-									2 => esc_html__('Completely hide the section', 'expmsap_textdomain')
+									0 => esc_html__('Show only the text: Nothing found in this search.', 'expandup-search-ajax-popup-free'),
+									1 => esc_html__('Show the latest posts from this CPT', 'expandup-search-ajax-popup-free'),
+									2 => esc_html__('Completely hide the section', 'expandup-search-ajax-popup-free')
 					);
 					foreach ($search_opts as $key => $label) {		
 						echo '<option value="' . esc_attr($key) . '" ' . selected($expmsap_section_cpt_not_found, $key, false) . '>' . esc_html($label) . '</option>';							
@@ -127,8 +127,8 @@ function expmsap_cpt_msap_metas_display(){
 		</tr>
 		<tr>
 			<td>
-				<h3><?php esc_html_e('Quantity of items to display', 'expmsap_textdomain'); ?></h3>
-				<p><label for="expmsap_section_qty" class="label"><?php esc_html_e('How many items do you want to display for this search? Please keep in mind that very high values can slow down the server response.', 'expmsap_textdomain'); ?></label>
+				<h3><?php esc_html_e('Quantity of items to display', 'expandup-search-ajax-popup-free'); ?></h3>
+				<p><label for="expmsap_section_qty" class="label"><?php esc_html_e('How many items do you want to display for this search? Please keep in mind that very high values can slow down the server response.', 'expandup-search-ajax-popup-free'); ?></label>
 			</td>
 			<td>
 				<select name="expmsap_section_qty" id="expmsap_section_qty" required>
@@ -142,24 +142,24 @@ function expmsap_cpt_msap_metas_display(){
 		</tr>
 		<tr>
 			<td>
-				<h3><?php esc_html_e('Show more results', 'expmsap_textdomain'); ?></h3>
-				<p><label for="expmsap_section_show_more" class="label"><?php esc_html_e('Show link to view all results?', 'expmsap_textdomain'); ?></label>
+				<h3><?php esc_html_e('Show more results', 'expandup-search-ajax-popup-free'); ?></h3>
+				<p><label for="expmsap_section_show_more" class="label"><?php esc_html_e('Show link to view all results?', 'expandup-search-ajax-popup-free'); ?></label>
 			</td>
 			<td>
-				<p style="color: red;"><?php esc_html_e('Attention, this feature is experimental', 'expmsap_textdomain'); ?></p>
+				<p style="color: red;"><?php esc_html_e('Attention, this feature is experimental', 'expandup-search-ajax-popup-free'); ?></p>
 				<select name="expmsap_section_show_more" id="expmsap_section_show_more" required>
-					<option value="0" <?php selected( $expmsap_section_show_more, 0 ); ?>><?php esc_html_e('No', 'expmsap_textdomain'); ?></option>
-					<option value="1" <?php selected( $expmsap_section_show_more, 1 ); ?>><?php esc_html_e('Yes', 'expmsap_textdomain'); ?></option>							
+					<option value="0" <?php selected( $expmsap_section_show_more, 0 ); ?>><?php esc_html_e('No', 'expandup-search-ajax-popup-free'); ?></option>
+					<option value="1" <?php selected( $expmsap_section_show_more, 1 ); ?>><?php esc_html_e('Yes', 'expandup-search-ajax-popup-free'); ?></option>							
 				</select>
-				<p><label for="expmsap_see_all_results_text" class="label"><?php esc_html_e('Enter text for the see all results button if left blank the default text will be displayed "See all results"', 'expmsap_textdomain'); ?></label>
+				<p><label for="expmsap_see_all_results_text" class="label"><?php esc_html_e('Enter text for the see all results button if left blank the default text will be displayed "See all results"', 'expandup-search-ajax-popup-free'); ?></label>
 				<input id="expmsap_see_all_results_text" name="expmsap_see_all_results_text" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_html($expmsap_see_all_results_text); ?>" >
 			    
 			</td>
 		</tr>					
 		<tr>
 			<td>
-				<h3><?php esc_html_e('Section title', 'expmsap_textdomain'); ?></h3>
-				<p><label for="expmsap_section_title" class="label"><?php esc_html_e('Enter a title for this section. If left blank, nothing will be shown', 'expmsap_textdomain'); ?></label>
+				<h3><?php esc_html_e('Section title', 'expandup-search-ajax-popup-free'); ?></h3>
+				<p><label for="expmsap_section_title" class="label"><?php esc_html_e('Enter a title for this section. If left blank, nothing will be shown', 'expandup-search-ajax-popup-free'); ?></label>
 			</td>
 			<td>
 				<input id="expmsap_section_title" name="expmsap_section_title" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_html($expmsap_section_title); ?>" >
@@ -167,21 +167,21 @@ function expmsap_cpt_msap_metas_display(){
 		</tr>
 		<tr>
 			<td>
-				<h3><?php esc_html_e('Section Link', 'expmsap_textdomain'); ?></h3>	
-                <p><?php esc_html_e('This link appears next to the section title, you can use it to add a link to a category, or results page for example', 'expmsap_textdomain'); ?></p>						
+				<h3><?php esc_html_e('Section Link', 'expandup-search-ajax-popup-free'); ?></h3>	
+                <p><?php esc_html_e('This link appears next to the section title, you can use it to add a link to a category, or results page for example', 'expandup-search-ajax-popup-free'); ?></p>						
 			</td>
 			<td>
-                <p><label for="expmsap_section_btn_text" class="label"><?php esc_html_e('Enter text for the section link, if left blank the link will not be shown', 'expmsap_textdomain'); ?></label>
+                <p><label for="expmsap_section_btn_text" class="label"><?php esc_html_e('Enter text for the section link, if left blank the link will not be shown', 'expandup-search-ajax-popup-free'); ?></label>
 				<input id="expmsap_section_btn_text" name="expmsap_section_btn_text" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_html($expmsap_section_btn_text); ?>" >
-                <p><label for="expmsap_section_btn_link" class="label"><?php esc_html_e('Enter the link for the button.', 'expmsap_textdomain'); ?></label>
+                <p><label for="expmsap_section_btn_link" class="label"><?php esc_html_e('Enter the link for the button.', 'expandup-search-ajax-popup-free'); ?></label>
                 <input id="expmsap_section_btn_link" name="expmsap_section_btn_link" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_url_raw($expmsap_section_btn_link); ?>" >
 			</td>
 		</tr>								
 	    <tr>
 			<td>
-				<h3><?php esc_html_e('Layout components', 'expmsap_textdomain'); ?></h3>
-				<p><?php esc_html_e('Mark the elements you want to hide in the searched items', 'expmsap_textdomain'); ?></p>
-				<p><?php esc_html_e('The price item only works for woocommerce products', 'expmsap_textdomain'); ?></p>
+				<h3><?php esc_html_e('Layout components', 'expandup-search-ajax-popup-free'); ?></h3>
+				<p><?php esc_html_e('Mark the elements you want to hide in the searched items', 'expandup-search-ajax-popup-free'); ?></p>
+				<p><?php esc_html_e('The price item only works for woocommerce products', 'expandup-search-ajax-popup-free'); ?></p>
 			</td>
 			<td>	
 				<p>                                
@@ -205,21 +205,21 @@ function expmsap_cpt_msap_metas_display(){
 						}
 					?>
                 </p>
-				<p style="color: red;"><?php esc_html_e('Attention, the price item only works for woocommerce products', 'expmsap_textdomain'); ?></p>
-				<p style="color: red;"><?php esc_html_e('Attention, the category item only works for woocommerce products and posts', 'expmsap_textdomain'); ?></p>								
+				<p style="color: red;"><?php esc_html_e('Attention, the price item only works for woocommerce products', 'expandup-search-ajax-popup-free'); ?></p>
+				<p style="color: red;"><?php esc_html_e('Attention, the category item only works for woocommerce products and posts', 'expandup-search-ajax-popup-free'); ?></p>								
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<h3><?php esc_html_e('Slider Components', 'expmsap_textdomain'); ?></h3>
-				<p><?php esc_html_e('Mark the elements you want to hide', 'expmsap_textdomain'); ?></p>						
+				<h3><?php esc_html_e('Slider Components', 'expandup-search-ajax-popup-free'); ?></h3>
+				<p><?php esc_html_e('Mark the elements you want to hide', 'expandup-search-ajax-popup-free'); ?></p>						
 			</td>
             <td>	
 			<p>
 				<?php  
 				$items = array(
-					'navigation' => esc_html__('Hide Navigation', 'expmsap_textdomain'),
-					'pagination' => esc_html__('Hide Pagination', 'expmsap_textdomain')										
+					'navigation' => esc_html__('Hide Navigation', 'expandup-search-ajax-popup-free'),
+					'pagination' => esc_html__('Hide Pagination', 'expandup-search-ajax-popup-free')										
 				);
 
 				foreach ($items as $key => $label) {

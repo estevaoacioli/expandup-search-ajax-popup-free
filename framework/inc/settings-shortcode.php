@@ -9,14 +9,14 @@ function expmsap_shortcode_page(){
 			<?php expmsap_help_links(); ?>
 			<?php settings_errors(); ?>
 
-			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'expmsap_textdomain'); ?><span class="plugin-version">Version: <?php echo esc_html(EXPMSAP_VERSION); ?></span></h1>
-			<h3 class="adm-page-subtitle"><?php esc_html_e('Shortcode for forms', 'expmsap_textdomain'); ?></h3>			
+			<h1 class="adm-page-title"><?php esc_html_e('Expand UP - Multiple Search Ajax Popup', 'expandup-search-ajax-popup-free'); ?><span class="plugin-version">Version: <?php echo esc_html(EXPMSAP_VERSION); ?></span></h1>
+			<h3 class="adm-page-subtitle"><?php esc_html_e('Shortcode for forms', 'expandup-search-ajax-popup-free'); ?></h3>			
             <table class="styled-table">
 				<tr>
 					<td>
-						<h3><?php esc_html_e('Shortcodes', 'expmsap_textdomain'); ?></h3>
+						<h3><?php esc_html_e('Shortcodes', 'expandup-search-ajax-popup-free'); ?></h3>
 						<p>
-							<?php esc_html_e('You can choose to use one of our form templates, just use one of the codes below', 'expmsap_textdomain'); ?>
+							<?php esc_html_e('You can choose to use one of our form templates, just use one of the codes below', 'expandup-search-ajax-popup-free'); ?>
 						</p>	
 					</td>
 				</tr>
