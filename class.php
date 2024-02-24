@@ -13,15 +13,12 @@ class ExpandUpSearchPopup{
 			add_action('wp_footer', array($this, 'expmsap_add_popup_html_to_footer'));
 			add_action('wp_enqueue_scripts', array($this, 'expmsap_front_scripts'));	
 		}
-		
 		add_action('admin_init', array($this, 'expmsap_register_settings'));
 		$expmsap_popup_smart_images_settings = intval(get_option( 'expmsap_popup_smart_images_settings', false ));
 		if($expmsap_popup_smart_images_settings === 1){
 			add_image_size('expmsap_thumb', 360, 360, true);
-		}		
-		
+		}
 		add_action('admin_enqueue_scripts', array($this, 'expmsap_admin_scripts'));
-		
 	}	
 	
 	// Add Pages admin
