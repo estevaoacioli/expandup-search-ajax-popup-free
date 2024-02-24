@@ -10,8 +10,9 @@ function expmsap_form_shortcode($atts) {
         ), $atts)
     );  
     ob_start();  
-    if( $model == 1 && EXPMSAP_ACTIVE === 1){  
-        $home_url = home_url();
+    $home_url = home_url();
+    
+    if( $model == 1 && EXPMSAP_ACTIVE === 1){         
     ?>
     <form id="expmsap_form_model_01" role="search" method="get" class="search-form" action="<?php echo esc_url($home_url); ?>/">        
         <label class="search-label">
