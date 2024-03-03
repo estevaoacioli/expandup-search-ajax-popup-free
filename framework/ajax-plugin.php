@@ -5,8 +5,8 @@ if (!defined('ABSPATH')) {
 function expmsap_content() {  
     $status= 'error';
     $msg = 'Error 404';
-    $html = '';  
-    if (isset($_POST['expmsap_global_nonce']) && wp_verify_nonce($_POST['expmsap_global_nonce'], 'expmsap-global-nonce')) {  
+    $html = ''; 
+    if ( isset( $_POST['expmsap_global_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['expmsap_global_nonce'] ) ), 'expmsap-global-nonce' ) ) {         
         $s = sanitize_text_field($_POST['s']);   
         $site_url = esc_url(site_url()); 
         $expmsap_popup_footer_activate = intval(get_option('expmsap_popup_footer_activate', false));

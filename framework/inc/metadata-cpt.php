@@ -94,8 +94,9 @@ function expmsap_cpt_msap_metas_display(){
                     
                     foreach ($cpts as $cpt_key => $cpt_label) {
                         $labels = get_post_type_labels(get_post_type_object($cpt_key)); // Obtenha as etiquetas corretas
-                        if (!in_array($cpt_key, $remove_itens)) {							                                                      
-							echo '<option value="' . esc_attr($cpt_key) . '" ' . selected($expmsap_section_cpt, $cpt_key, false) . '>' . esc_html($labels->singular_name) . '</option>';
+                        if (!in_array($cpt_key, $remove_itens)) {
+							echo '<option value="' . esc_attr($cpt_key) . '" ' . selected( esc_attr($expmsap_section_cpt), esc_attr($cpt_key), false ) . '>' . esc_html($labels->singular_name) . '</option>';
+							
                         }
                     }
                     ?>
@@ -119,7 +120,7 @@ function expmsap_cpt_msap_metas_display(){
 									2 => esc_html__('Completely hide the section', 'expandup-search-ajax-popup-free')
 					);
 					foreach ($search_opts as $key => $label) {		
-						echo '<option value="' . esc_attr($key) . '" ' . selected($expmsap_section_cpt_not_found, $key, false) . '>' . esc_html($label) . '</option>';							
+						echo '<option value="' . esc_attr($key) . '" ' . selected( esc_attr($expmsap_section_cpt_not_found), esc_attr($cpt_key), false ) . '>' . esc_html($label) . '</option>';							
 					}
 					?>							
 				</select>
@@ -133,8 +134,8 @@ function expmsap_cpt_msap_metas_display(){
 			<td>
 				<select name="expmsap_section_qty" id="expmsap_section_qty" required>
 					<?php
-						for ($i = 3; $i <= 21; $i += 3) {
-							echo '<option value="' . esc_attr($i) . '" ' . selected($expmsap_section_qty, absint($i), false) . '>' . absint($i) . '</option>';								
+						for ($i = 3; $i <= 21; $i += 3) {							
+							echo '<option value="' . esc_attr($i) . '" ' . selected($expmsap_section_qty, absint($i), false) . '>' . esc_html( absint($i) ) . '</option>';							
 						}															
 					?>							
 				</select>
@@ -174,7 +175,7 @@ function expmsap_cpt_msap_metas_display(){
                 <p><label for="expmsap_section_btn_text" class="label"><?php esc_html_e('Enter text for the section link, if left blank the link will not be shown', 'expandup-search-ajax-popup-free'); ?></label>
 				<input id="expmsap_section_btn_text" name="expmsap_section_btn_text" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_html($expmsap_section_btn_text); ?>" >
                 <p><label for="expmsap_section_btn_link" class="label"><?php esc_html_e('Enter the link for the button.', 'expandup-search-ajax-popup-free'); ?></label>
-                <input id="expmsap_section_btn_link" name="expmsap_section_btn_link" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_url_raw($expmsap_section_btn_link); ?>" >
+                <input id="expmsap_section_btn_link" name="expmsap_section_btn_link" style="width: 100%;" type="text" class="input-text" value="<?php echo esc_url($expmsap_section_btn_link); ?>" >
 			</td>
 		</tr>								
 	    <tr>
