@@ -1,6 +1,14 @@
 .help-links{
-    display: block;
-    margin: 5px 0;
+  display: flex;
+  margin: 5px 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 0;
+}
+.help-links a{
+  margin: 0px 5px;
 }
 .plugin-version{
     color: #000;

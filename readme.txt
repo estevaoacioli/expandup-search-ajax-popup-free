@@ -1,12 +1,16 @@
 === Expand UP - Multiple Search Ajax Popup FREE ===
 Contributors: expandupwp, estevao_acioli
-Tags: search, ajax, popup, results
+Tags: search popup, woocommerce search, ajax search, live search, search plugin
 Requires at least: 4.9
 Tested up to: 6.3.2
 Requires PHP: 7.0
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+== Short Description ==
+
+Plugin for conducting AJAX searches and displaying results in a popup; the results are displayed in a segmented manner
 
 == General ==
 
@@ -23,7 +27,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 *  Seamless Integration: Our plugin seamlessly integrates with WordPress, ensuring a smooth and user-friendly implementation.
 
 
-Demo: [Live Preview](https://demos.expandupwp.com/searchpopup-popup/demo-store/)
+Demo: [Live Preview](https://demos.expandupwp.com/expmsap-popup/demo-store/)
 Documentation: [View Documentation](https://documentation.expandupwp.com/multiple-search-ajax-popup/)
 Contact Support: [Support Form](https://expandupwp.com/support/)
 

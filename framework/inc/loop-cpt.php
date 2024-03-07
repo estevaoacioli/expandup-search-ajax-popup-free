@@ -2,7 +2,7 @@
 if (!defined('ABSPATH')) {
     exit();
 }
-function expandup_searchpopup_loop_cpt($s, $cpt, $categories, $qty) {	
+function expmsap_loop_cpt($s, $cpt, $categories, $qty) {	
     $qty = intval($qty);
     $posts_per_page = 30;	
 
@@ -35,13 +35,13 @@ function expandup_searchpopup_loop_cpt($s, $cpt, $categories, $qty) {
             $query->the_post();	
 
             $post_link = get_permalink();
-            $searchpopup_popup_smart_images_settings = intval(get_option( 'searchpopup_popup_smart_images_settings', false ));
-            $searchpopup_popup_card_image_size = get_option('searchpopup_popup_card_image_size', false);
+            $expmsap_popup_smart_images_settings = intval(get_option( 'expmsap_popup_smart_images_settings', false ));
+            $expmsap_popup_card_image_size = get_option('expmsap_popup_card_image_size', false);
             
-            if( $searchpopup_popup_smart_images_settings === 1 ) {
-                $custom_size = 'searchpopup_thumb';
-            } elseif( $searchpopup_popup_smart_images_settings === 0 && !empty($searchpopup_popup_card_image_size) ) {
-                $custom_size = $searchpopup_popup_card_image_size;
+            if( $expmsap_popup_smart_images_settings === 1 ) {
+                $custom_size = 'expmsap_thumb';
+            } elseif( $expmsap_popup_smart_images_settings === 0 && !empty($expmsap_popup_card_image_size) ) {
+                $custom_size = $expmsap_popup_card_image_size;
             } else {
                 $custom_size = 'thumbnail';
             }
@@ -51,17 +51,20 @@ function expandup_searchpopup_loop_cpt($s, $cpt, $categories, $qty) {
             
 
             if (!$thumbnail_url) {					
-                $thumbnail_url = EXPANDUP_SEARCHPOPUP_URL.'assets/images/image-default.png';
+                $thumbnail_url = esc_url(EXPMSAP_URL).'assets/images/image-default.png';
             }						
             $post_title = get_the_title(); 
             
             $post_category = array();
 
            
+            if ($cpt === 'post') {                
+            
                 $categories = get_the_category();
                 if (!empty($categories)) {
                     $post_category[] = $categories[0]->name;
                 }
+            }	
             				
             $post_excerpt = get_the_excerpt();
             $max_words = 15;
@@ -79,8 +82,8 @@ function expandup_searchpopup_loop_cpt($s, $cpt, $categories, $qty) {
                     'post_category' => $post_category,
                     'post_excerpt' => $post_excerpt,
                     'post_date' => $post_date,
-                    'price_regular' => isset($product_regular_price) ? $product_regular_price : '',
-                    'price_offer' => isset($product_sale_price) ? $product_sale_price : '',						
+                    'price_regular' => '',
+                    'price_offer' => '',						
                 );
             }
             $i++;

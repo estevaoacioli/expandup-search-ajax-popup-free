@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit();
 }
 // Function to convert rgb and hex colors to rgba
-function expandup_searchpopup_convertColorToRGBA($color, $alpha) {
+function expmsap_convertColorToRGBA($color, $alpha) {
     // Checks if $color is in RGB format (example, "rgb(255, 0, 0)")
     if (preg_match('/^rgb\((\d+), (\d+), (\d+)\)$/', $color, $rgbMatches)) {
         $red = $rgbMatches[1];
@@ -30,34 +30,36 @@ function expandup_searchpopup_convertColorToRGBA($color, $alpha) {
     return $rgba;
 }
 
-function expandup_searchpopup_menu_items_to_list($menu_id) {    
-    $menu_items = wp_get_nav_menu_items($menu_id);    
-    if ($menu_items) {        
+function expmsap_menu_items_to_list($menu_id) {
+    
+    if (!is_int($menu_id) && !ctype_digit($menu_id)) {
+        return ''; 
+    }
+
+    $menu_id = (int) $menu_id;
+
+    $menu_items = wp_get_nav_menu_items($menu_id);
+    
+    if ($menu_items) {
         $menu_list = '<ul>';
-        foreach ($menu_items as $menu_item) {            
-            $menu_list .= '<li><a href="' . $menu_item->url . '">' . $menu_item->title . '</a></li>';
-        }        
+        foreach ($menu_items as $menu_item) {
+            $menu_list .= '<li><a href="' . esc_url($menu_item->url) . '">' . esc_html($menu_item->title) . '</a></li>';
+        }
         $menu_list .= '</ul>';
-    } else {        
-        $menu_list = '<p style="display: none;"> Menu not found!</p>';
+    } else {
+        $menu_list = '<p style="display: none;">Menu not found!</p>';
     }
 
     return $menu_list;
 }
 
-function expandup_searchpopup_help_links() {    
-    $html = '';
-    $html .= '<div class="help-links">';
-    $html .= '<a href="https://expandupwp.com/" target="_blank" >Expand UP WP</a>';
-    $html .= ' | ';
-    $html .= '<a href="https://expandupwp.com/support/" target="_blank" >Support</a>';
-    $html .= ' | ';
-    $html .= '<a href="https://expandupwp.com/products/" target="_blank" >Other Products</a>';
-    $html .= ' | ';
-    $html .= '<a href="https://expandupwp.com/exp-product/multiple-search-ajax-popup/" target="_blank" >Product Page</a>';
-    $html .= ' | ';
-    $html .= '<a href="https://documentation.expandupwp.com/multiple-search-ajax-popup/" target="_blank" >Documentation</a>';
-    $html .= '</div>';
-
-    return $html;
+function expmsap_help_links() {  ?>
+    <div class="help-links">
+        <a href="https://expandupwp.com/" target="_blank" >Expand UP</a>
+        <a href="https://expandupwp.com/support/" target="_blank" >Support</a>
+        <a href="https://expandupwp.com/products/" target="_blank" >Other Products</a>
+        <a href="https://expandupwp.com/exp-product/multiple-search-ajax-popup/" target="_blank" >Product Page</a>
+        <a href="https://documentation.expandupwp.com/multiple-search-ajax-popup/" target="_blank" >Documentation</a>
+    </div>
+<?php
 }
